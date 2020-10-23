@@ -1,77 +1,71 @@
 import React, { Component } from 'react';
-import { Media } from 'reactstrap';
+import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle, CardLink } from 'reactstrap';
+
 
 class ProjectsMenu extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            projects: [
-                {
-                    id: 0,
-                    name: 'TweetBot',
-                    image: 'assets/images/twitterBot.png',
-                    category: 'mains',
-                    label: 'Hot',
-                    price: '4.99',
-                    description: 'Node RESTful CRUD GET operations Axios'
-                },
-                {
-                    id: 1,
-                    name: 'Java Chess',
-                    image: 'assets/images/JavaChess.png',
-                    category: 'appetizer',
-                    label: '',
-                    price: '1.99',
-                    description: 'Core Java and OOP principles demonstrating Encapsulation, Inheritance, Polymorphism and Multithreading over a client/server architecture.'
-                },
-                {
-                    id: 2,
-                    name: 'React Hooks Blog',
-                    image: 'assets/images/vadonut.png',
-                    category: 'appetizer',
-                    label: 'New',
-                    price: '1.99',
-                    description: 'A quintessential ConFusion experience, is it a vada or is it a donut?'
-                },
-                {
-                    id: 3,
-                    name: 'Ristorante',
-                    image: 'assets/images/elaicheesecake.png',
-                    category: 'dessert',
-                    label: '',
-                    price: '2.99',
-                    description: 'A delectable, semi-sweet New York Style Cheese Cake, with Graham cracker crust and spiced with Indian cardamoms'
-                }
-            ],
-        };
+            selectedProject: null
+        }
+        console.log('Menu Componet constructor called')
+    }
+        componentDidMount() {
+            console.log('Menu Component componentDidMount is invoked')
+        }
+    onProjectSelect(project) {
+        this.setState({ selectedProject: project });
     }
 
-    render() {
-        const projectsMenu = this.state.projects.map((project) => {
+
+    renderProject(project) {
+        if (project != null) {
             return (
-                <div key={project.id} className="col-12 mt-5">
-                    <Media tag="li">
-                        <Media left middle>
-                            <Media object src={project.image} alt={project.name} />
-                        </Media>
-                        <Media body className="ml-5">
-                        <div className="font-color">
-                            <Media heading>{project.name}</Media>
-                            <p>{project.description}</p>
-                            </div>
-                        </Media>
-                    </Media>
+                <Card>
+                    {/* 
+                    <CardImg width='100%' src={project.image} alt={project.name} />
+                    */}
+                    <CardBody >
+                        <CardTitle>{project.name}</CardTitle>
+                        <CardText>{project.description}</CardText>
+                    </CardBody>
+
+
+                </Card>
+            );
+        }
+        else {
+            return (
+                <div></div>
+            )
+        }
+    }
+    render() {
+        const projectsMenu = this.props.projects.map((project) => {
+            return (
+                <div key={project.id}
+                    className="col-12 col-sm-3 col-md m-1 d-flex">
+
+                    <Card onClick={() => this.onProjectSelect(project)}> 
+                        <CardImg width='100%' src={project.image} alt={project.name} />
+                        <CardTitle>{project.name}</CardTitle>
+                        <CardText>{project.category}</CardText>
+                        <a href={project.link}>try me</a>
+
+                    </Card>
                 </div>
             );
         });
+        console.log('Menu Component render is invoked');
 
         return (
             <div className="body-color">
-            <div className="container">
-                <div className="row">
-                        <Media list>
-                            {projectsMenu}
-                        </Media>
+                <div className="container">
+                    <div className="row ">
+                        {projectsMenu}
+                    </div>
+                    <div className="row">
+                        {this.renderProject(this.state.selectedProject)}
                     </div>
                 </div>
             </div>
