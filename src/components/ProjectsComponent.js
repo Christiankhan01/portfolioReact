@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle, CardLink } from 'reactstrap';
+import { Card, CardImg,  CardText, CardBody, CardTitle, CardLink } from 'reactstrap';
+
 
 
 class ProjectsMenu extends Component {
@@ -10,9 +11,9 @@ class ProjectsMenu extends Component {
         }
         console.log('Menu Componet constructor called')
     }
-        componentDidMount() {
-            console.log('Menu Component componentDidMount is invoked')
-        }
+    componentDidMount() {
+        console.log('Menu Component componentDidMount is invoked')
+    }
     onProjectSelect(project) {
         this.setState({ selectedProject: project });
     }
@@ -21,17 +22,23 @@ class ProjectsMenu extends Component {
     renderProject(project) {
         if (project != null) {
             return (
-                <Card>
-                    {/* 
-                    <CardImg width='100%' src={project.image} alt={project.name} />
-                    */}
-                    <CardBody >
-                        <CardTitle>{project.name}</CardTitle>
-                        <CardText>{project.description}</CardText>
-                    </CardBody>
+                <div className="col-12 col-md-12">
+                    <Card className="text-center">
+                        <CardBody >
+                            <img src={project.image2} alt="" />
+                            <img src={project.image3} alt=""/>
+                            <img src={project.image4} alt=""/>
+                            <img src={project.image5} alt=""/>
+                            <img src={project.image6} alt=""/>
+                            <CardTitle>{project.name}</CardTitle>
+                            <CardText>{project.description}</CardText>
+                            <CardText>{project.label}</CardText>
+                            <a href={project.link}>{project.word}</a>
+                        </CardBody>
+                    </Card>
+                     
 
-
-                </Card>
+                </div>
             );
         }
         else {
@@ -45,13 +52,11 @@ class ProjectsMenu extends Component {
             return (
                 <div key={project.id}
                     className="col-12 col-sm-3 col-md m-1 d-flex">
-
-                    <Card onClick={() => this.onProjectSelect(project)}> 
+                    <Card className="text-center" onClick={() => this.onProjectSelect(project)}>
                         <CardImg width='100%' src={project.image} alt={project.name} />
                         <CardTitle>{project.name}</CardTitle>
                         <CardText>{project.category}</CardText>
-                        <a href={project.link}>try me</a>
-
+                        <a href={project.link}>{project.word}</a>
                     </Card>
                 </div>
             );
