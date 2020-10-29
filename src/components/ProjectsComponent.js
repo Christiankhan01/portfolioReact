@@ -22,7 +22,7 @@ class ProjectsMenu extends Component {
     renderProject(project) {
         if (project != null) {
             return (
-                <div className="col-12 col-md-12">
+                <div className=" row-content col-12 col-md-12">
                     <Card className="text-center">
                         <CardBody >
                             <img src={project.image2} alt="" />
