@@ -36,8 +36,6 @@ class ProjectsMenu extends Component {
                             <a href={project.link}>{project.word}</a>
                         </CardBody>
                     </Card>
-                     
-
                 </div>
             );
         }

@@ -20,7 +20,9 @@ class Main extends Component {
   render() {
     const HomePage = () => {
       return(
-        <Home project={this.state.projects.filter((project) => project.featured[0])} />
+
+        <Home project={this.state.projects.filter((project) => project.featured)[0]} />
+
       ); 
     }
   return(
