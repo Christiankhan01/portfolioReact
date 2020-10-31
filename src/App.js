@@ -1,22 +1,17 @@
 import React, { Component } from 'react';
 import './App.css';
-import { PROJECTS } from './shared/projects';
+import {BrowserRouter} from 'react-router-dom';
 import Main from './components/MainComponent';
 class App extends Component {
-  // constructor(props) {
-  //   super(props); 
-    
-  //   this.state= {
-  //     projects: PROJECTS
-  //   }; 
-  // }
+
   
   render() {
     return (
+      <BrowserRouter>
       <div>
         <Main />
       </div>
-
+      </BrowserRouter>
     );
   }
 }

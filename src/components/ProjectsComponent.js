@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, CardImg,  CardText, CardBody, CardTitle, CardLink } from 'reactstrap';
+import { Card, CardImg,  CardText, CardBody, CardTitle } from 'reactstrap';
 
 
 
@@ -51,7 +51,7 @@ class ProjectsMenu extends Component {
         const projectsMenu = this.props.projects.map((project) => {
             return (
                 <div key={project.id}
-                    className="col-12 col-sm-3 col-md m-1 d-flex">
+                    className="col-12 col-sm col-md m-1 d-flex">
                     <Card className="text-center" onClick={() => this.onProjectSelect(project)}>
                         <CardImg width='100%' src={project.image} alt={project.name} />
                         <CardTitle>{project.name}</CardTitle>

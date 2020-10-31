@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { Navbar, NavbarBrand } from 'reactstrap';
 import ProjectsMenu from './ProjectsComponent';
 import { PROJECTS } from '../shared/projects';
+import Home from './HomeComponent';
 import Header from './HeaderComponent';
 import Footer from './FooterComponent';
+import {Switch, Route, Redirect} from 'react-router-dom'; 
 class Main extends Component {
   constructor(props) {
     super(props);
@@ -15,13 +16,19 @@ class Main extends Component {
   }
 
   render() {
+    const HomePage = () => {
+      return(
+        <Home />
+      ); 
+    }
   return(
       <div>
         <Header />
-        <ProjectsMenu projects={this.state.projects} 
-        onClick={(projectId) => this.onProjectSelect(projectId)}
-        project={this.state.projects.filter((project) => project.id === this.state.selectedProject)[0]}/>
-        
+        <Switch>
+          <Route path="/home" component={HomePage} />
+          <Route exact path="/projects" component={() => <ProjectsMenu projects={this.state.projects} />} />
+        <Redirect to="/home" />
+        </Switch>
         <Footer />
       </div >
     );
