@@ -25,7 +25,7 @@ class ProjectsMenu extends Component {
                 <div className=" row-content col-12 col-md-12">
                     <Card className="text-center">
                         <CardBody >
-                            <img src={project.image2} alt="" />
+                            <img src={project.image2} alt=""/>
                             <img src={project.image3} alt=""/>
                             <img src={project.image4} alt=""/>
                             <img src={project.image5} alt=""/>
