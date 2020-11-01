@@ -5,9 +5,9 @@ function RenderCard({ item }) {
 
     return (
         <div className="container">
-            <div className="row">
-                <div className="col-12 col-sm col-md-4 m-1 d-flex ">
-
+            <div className="row justify-content-center">
+                
+            
                     <Card>
                         <CardImg src={item.image} alt={item.name} />
                         <CardBody>
@@ -16,21 +16,21 @@ function RenderCard({ item }) {
                         </CardBody>
                     </Card>
 
-                </div>
+
+
             </div>
         </div>
     );
+
 }
 
 function Home(props) {
     return (
         <div className="container">
-            <div className="row  justify-content-center">
-                <div className="col-12 col-sm col-md-4 ">
-
+            <div className="row">
                     <RenderCard item={props.project} />
 
-                </div>
+                    
             </div>
         </div>
 

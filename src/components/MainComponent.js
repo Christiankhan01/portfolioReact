@@ -21,8 +21,15 @@ class Main extends Component {
     const HomePage = () => {
       return (
         <div className="container">
+          <div className="row justify-content-center m-1 d-flex">
+          <div className="col-12 col-sm col-md-3">
             <Home project={this.state.projects.filter((project) => project.featured)[0]} />
-            <Home project={this.state.projects.filter((project) => project.featured)[1]} />
+            </div>
+            <div className="col-12 col-sm col-md-3">
+              <Home project={this.state.projects.filter((project) => project.featured)[1]} />
+
+            </div>
+          </div>
         </div>
       );
     }
