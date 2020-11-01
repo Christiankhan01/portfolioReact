@@ -6,7 +6,7 @@ import Footer from './FooterComponent';
 import Contact from './ContactComponent';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { PROJECTS } from '../shared/projects';
-import { CardGroup } from 'reactstrap';
+
 class Main extends Component {
   constructor(props) {
     super(props);
@@ -33,12 +33,19 @@ class Main extends Component {
         </div>
       );
     }
+ {/*   const ProjectWithId = ({match}) => {
+      return (
+        <ProjectsMenu project={this.state.projects.filter((project) => project.id === parseInt(match.params.projectId,10))[0]} />
+      ); 
+      
+    }*/}
     return (
       <div>
         <Header />
         <Switch>
           <Route path="/home" component={HomePage} />
           <Route exact path="/projects" component={() => <ProjectsMenu projects={this.state.projects} />} />
+          {/*<Route path="/projects/:projectId" component={ProjectWithId} />*/}
           <Route exact path="/contact" component={Contact} />
           <Redirect to="/home" />
         </Switch>

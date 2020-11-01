@@ -1,23 +1,18 @@
 import React from 'react';
-import { CardColumns, Row, Card, CardImg, CardText, CardBody, CardTitle, CardGroup, } from 'reactstrap';
+import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
 
 function RenderCard({ item }) {
 
     return (
         <div className="container">
             <div className="row justify-content-center">
-                
-            
-                    <Card>
-                        <CardImg src={item.image} alt={item.name} />
-                        <CardBody>
-                            <CardTitle>{item.name}</CardTitle>
-                            <CardText>{item.description}</CardText>
-                        </CardBody>
-                    </Card>
-
-
-
+                <Card>
+                    <CardImg src={item.image} alt={item.name} />
+                    <CardBody>
+                        <CardTitle>{item.name}</CardTitle>
+                        <CardText>{item.description}</CardText>
+                    </CardBody>
+                </Card>
             </div>
         </div>
     );
@@ -28,9 +23,7 @@ function Home(props) {
     return (
         <div className="container">
             <div className="row">
-                    <RenderCard item={props.project} />
-
-                    
+                <RenderCard item={props.project} />
             </div>
         </div>
 

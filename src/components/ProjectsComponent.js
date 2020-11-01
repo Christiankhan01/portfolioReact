@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Card, CardImg,  CardText, CardBody, CardTitle } from 'reactstrap';
-
+import { Card, CardImg, CardText, CardBody, CardTitle, Breadcrumb, BreadcrumbItem } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 
 class ProjectsMenu extends Component {
@@ -23,19 +23,23 @@ class ProjectsMenu extends Component {
         if (project != null) {
             return (
                 <div className=" row-content col-12 col-md-12">
-                    <Card className="text-center">
-                        <CardBody >
-                            <img src={project.image2} alt=""/>
-                            <img src={project.image3} alt=""/>
-                            <img src={project.image4} alt=""/>
-                            <img src={project.image5} alt=""/>
-                            <img src={project.image6} alt=""/>
-                            <CardTitle>{project.name}</CardTitle>
-                            <CardText>{project.description}</CardText>
-                            <CardText>{project.label}</CardText>
-                            <a href={project.link}>{project.word}</a>
-                        </CardBody>
-                    </Card>
+                    <div className="text-center">
+                        <Card>
+                        
+                            <CardBody >
+                                <img src={project.image2} alt="" />
+                                <img src={project.image3} alt="" />
+                                <img src={project.image4} alt="" />
+                                <img src={project.image5} alt="" />
+                                <img src={project.image6} alt="" />
+                                <CardTitle>{project.name}</CardTitle>
+                                <CardText>{project.description}</CardText>
+                                <CardText>{project.label}</CardText>
+                                <a href={project.link}>{project.word}</a>
+                            </CardBody>
+
+                        </Card>
+                    </div>
                 </div>
             );
         }
@@ -51,10 +55,12 @@ class ProjectsMenu extends Component {
                 <div key={project.id}
                     className="col-12 col-sm col-md m-1 d-flex">
                     <Card className="text-center" onClick={() => this.onProjectSelect(project)}>
+
                         <CardImg width='100%' src={project.image} alt={project.name} />
                         <CardTitle>{project.name}</CardTitle>
                         <CardText>{project.category}</CardText>
                         <a href={project.link}>{project.word}</a>
+
                     </Card>
                 </div>
             );
@@ -64,6 +70,16 @@ class ProjectsMenu extends Component {
         return (
             <div className="body-color">
                 <div className="container">
+                <div className="row">
+                    <Breadcrumb className="text-color">
+                        <BreadcrumbItem><Link to='/home'>Home</Link></BreadcrumbItem>
+                        <BreadcrumbItem active>Projects</BreadcrumbItem>
+                    </Breadcrumb>
+                <div className="col-12">
+                    <h3>Projects</h3>
+                    <hr />
+                </div>
+                </div>
                     <div className="row ">
                         {projectsMenu}
                     </div>
