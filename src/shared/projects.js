@@ -17,7 +17,7 @@ export const PROJECTS =
             image: 'assets/images/javaChess.png',
             image2: 'assets/logos/javaLogo.png',
             category: 'Core Java',
-            featured: true, 
+            featured: true,
             link:'',
             word: 'Java', 
             description: 'Core Java and OOP principles demonstrating Encapsulation, Inheritance, Polymorphism and Multithreading over a client/server architecture.',

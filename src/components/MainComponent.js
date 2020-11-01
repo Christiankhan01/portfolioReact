@@ -4,9 +4,9 @@ import Home from './HomeComponent';
 import Header from './HeaderComponent';
 import Footer from './FooterComponent';
 import Contact from './ContactComponent';
-import {Switch, Route, Redirect} from 'react-router-dom'; 
+import { Switch, Route, Redirect } from 'react-router-dom';
 import { PROJECTS } from '../shared/projects';
-
+import { CardGroup } from 'reactstrap';
 class Main extends Component {
   constructor(props) {
     super(props);
@@ -19,20 +19,21 @@ class Main extends Component {
 
   render() {
     const HomePage = () => {
-      return(
-
-        <Home project={this.state.projects.filter((project) => project.featured)[0]} />
-
-      ); 
+      return (
+        <div className="container">
+            <Home project={this.state.projects.filter((project) => project.featured)[0]} />
+            <Home project={this.state.projects.filter((project) => project.featured)[1]} />
+        </div>
+      );
     }
-  return(
+    return (
       <div>
         <Header />
         <Switch>
           <Route path="/home" component={HomePage} />
           <Route exact path="/projects" component={() => <ProjectsMenu projects={this.state.projects} />} />
           <Route exact path="/contact" component={Contact} />
-        <Redirect to="/home" />
+          <Redirect to="/home" />
         </Switch>
         <Footer />
       </div >

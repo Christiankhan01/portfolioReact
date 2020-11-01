@@ -1,5 +1,3 @@
 {
-    "editor.cursorBlinking": "expand",
-    "editor.cursorWidth": 4,
-    "editor.cursorSmoothCaretAnimation": true
+    "editor.cursorWidth": 2
 }

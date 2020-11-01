@@ -1,32 +1,39 @@
 import React from 'react';
-import { Card, CardImg, CardText, CardBody, CardTitle, } from 'reactstrap';
+import { CardColumns, Row, Card, CardImg, CardText, CardBody, CardTitle, CardGroup, } from 'reactstrap';
 
 function RenderCard({ item }) {
 
     return (
-        <div className="col-12 col-sm-6 col-md-6 m-1 d-flex">
-            <Card>
-                <CardImg src={item.image} alt={item.name} />
-                <CardBody>
-                    <CardTitle>{item.name}</CardTitle>
-                    <CardText>{item.description}</CardText>
-                </CardBody>
-            </Card>
+        <div className="container">
+            <div className="row">
+                <div className="col-12 col-sm col-md-4 m-1 d-flex ">
+
+                    <Card>
+                        <CardImg src={item.image} alt={item.name} />
+                        <CardBody>
+                            <CardTitle>{item.name}</CardTitle>
+                            <CardText>{item.description}</CardText>
+                        </CardBody>
+                    </Card>
+
+                </div>
+            </div>
         </div>
     );
-
 }
 
 function Home(props) {
     return (
         <div className="container">
-            <div className="row align-items-start">
-                <div className="col-12 col-md m-1">
-                    <RenderCard item={props.project}
-                    />
+            <div className="row  justify-content-center">
+                <div className="col-12 col-sm col-md-4 ">
+
+                    <RenderCard item={props.project} />
+
                 </div>
             </div>
         </div>
+
     );
 }
 
