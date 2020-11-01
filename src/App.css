@@ -50,3 +50,7 @@ address {
 .text-color {
     color: floralwhite;
 }
+
+.nowrap {
+    white-space: nowrap;
+}

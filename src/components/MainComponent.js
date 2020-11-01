@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ProjectsMenu from './ProjectsComponent';
 import Home from './HomeComponent';
+import About from './AboutComponent';
 import Header from './HeaderComponent';
 import Footer from './FooterComponent';
 import Contact from './ContactComponent';
@@ -45,7 +46,7 @@ class Main extends Component {
         <Switch>
           <Route path="/home" component={HomePage} />
           <Route exact path="/projects" component={() => <ProjectsMenu projects={this.state.projects} />} />
-          {/*<Route path="/projects/:projectId" component={ProjectWithId} />*/}
+          <Route exact path="/about" component={About} />
           <Route exact path="/contact" component={Contact} />
           <Redirect to="/home" />
         </Switch>
