@@ -2,8 +2,20 @@
     background-color: #242424;
 }
 
+.jumbotron {
+    padding: 70px 20px 70px 20px;
+    margin: 0px auto;
+    background-color: #141414;
+    color: floralwhite;
+}
+
 .font-color {
     color: floralwhite;
+}
+
+.img-container {
+    position: relative;
+    display: inline-block;
 }
 
 .cardStyle {
@@ -30,17 +42,11 @@
     padding: 20px 0px 20px 0px;
 }
 
-.jumbotron {
-    padding: 70px 30px 70px 30px;
-    margin: 0px auto;
-    background: #141414;
-    color: floralwhite;
-}
-
-address {
-    font-size: 80%;
-    margin: 0px;
-    color: #0f0f0f;
+ul.no-bullets {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
 }
 
 .navbar-dark {

@@ -4,7 +4,6 @@ import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
 function RenderCard({ item }) {
 
     return (
-
         <div className="container">
             <div className="row justify-content-center">
                 <Card>
@@ -15,7 +14,7 @@ function RenderCard({ item }) {
                     </CardBody>
                 </Card>
             </div>
-        </div>
+        </div >
 
     );
 
