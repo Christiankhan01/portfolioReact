@@ -23,8 +23,8 @@ class Main extends Component {
       return (
         <div className="container">
           <div className="row justify-content-center m-1 d-flex">
-          <div className="col-12 col-sm col-md-3">
-            <Home project={this.state.projects.filter((project) => project.featured)[0]} />
+            <div className="col-12 col-sm col-md-3">
+              <Home project={this.state.projects.filter((project) => project.featured)[0]} />
             </div>
             <div className="col-12 col-sm col-md-3">
               <Home project={this.state.projects.filter((project) => project.featured)[1]} />
@@ -34,24 +34,20 @@ class Main extends Component {
         </div>
       );
     }
- {/*   const ProjectWithId = ({match}) => {
-      return (
-        <ProjectsMenu project={this.state.projects.filter((project) => project.id === parseInt(match.params.projectId,10))[0]} />
-      ); 
-      
-    }*/}
     return (
-      <div>
-        <Header />
-        <Switch>
-          <Route path="/home" component={HomePage} />
-          <Route exact path="/projects" component={() => <ProjectsMenu projects={this.state.projects} />} />
-          <Route exact path="/about" component={About} />
-          <Route exact path="/contact" component={Contact} />
-          <Redirect to="/home" />
-        </Switch>
-        <Footer />
-      </div >
+      <body class="body-color">
+        <div>
+          <Header />
+          <Switch>
+            <Route path="/home" component={HomePage} />
+            <Route exact path="/projects" component={() => <ProjectsMenu projects={this.state.projects} />} />
+            <Route exact path="/about" component={About} />
+            <Route exact path="/contact" component={Contact} />
+            <Redirect to="/home" />
+          </Switch>
+          <Footer />
+        </div >
+      </body>
     );
   }
 }
