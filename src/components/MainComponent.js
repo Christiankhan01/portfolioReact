@@ -5,18 +5,23 @@ import About from './AboutComponent';
 import Header from './HeaderComponent';
 import Footer from './FooterComponent';
 import Contact from './ContactComponent';
-import { Switch, Route, Redirect } from 'react-router-dom';
-import Image from 'react-bootstrap/Image'
+import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
+import { connect } from 'react-redux'; 
 import { PROJECTS } from '../shared/projects';
 
+
+import Image from 'react-bootstrap/Image'
+
+const mapStateToProps = state => {
+    return {
+      projects: state.projects
+    } 
+}
 class Main extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      projects: PROJECTS,
 
-    };
   }
 
   render() {
@@ -128,10 +133,10 @@ class Main extends Component {
           <div className="row justify-content-center m-1 d-flex">
 
             <div className="col-12 col-sm col-md-3">
-              <Home project={this.state.projects.filter((project) => project.featured)[0]} />
+              <Home project={this.props.projects.filter((project) => project.featured)[0]} />
             </div>
             <div className="col-12 col-sm col-md-3">
-              <Home project={this.state.projects.filter((project) => project.featured)[1]} />
+              <Home project={this.props.projects.filter((project) => project.featured)[1]} />
 
             </div>
           </div>
@@ -144,7 +149,7 @@ class Main extends Component {
           <Header />
           <Switch>
             <Route path="/home" component={HomePage} />
-            <Route exact path="/projects" component={() => <ProjectsMenu projects={this.state.projects} />} />
+            <Route exact path="/projects" component={() => <ProjectsMenu projects={this.props.projects} />} />
             <Route exact path="/about" component={About} />
             <Route exact path="/contact" component={Contact} />
             <Redirect to="/home" />
@@ -156,4 +161,4 @@ class Main extends Component {
   }
 }
 
-export default Main;
+export default withRouter(connect(mapStateToProps)(Main));
