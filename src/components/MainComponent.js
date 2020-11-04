@@ -31,100 +31,100 @@ class Main extends Component {
                         Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
               </div>
               <div className="align-self-center col-12 col-sm-6 col-md-6">
-                  <Image src="assets/logos/devLogo.png" fluid alt="Developer Image" />
-                </div>
+                <Image src="assets/logos/devLogo.png" fluid alt="Developer Image" />
+              </div>
             </div>
           </header>
           <section>
-          <div className="container">
+            <div className="container">
               <h2 className="text-center text-color">My Skills</h2>
               <div className="row  ">
-                  <div className=" row-content col-12 col-md-4">
-                      <h5 className="text-center text-color"> FullStack Web Development</h5>
-                      <ul className="no-bullets text-color">
-                          <li>
-                              <img src="./assets/logos/javascriptLogo.png" alt="JavascriptLogo.png" />
-                              <span>React</span>
-                          </li>
-                          <li>
-                              <img src="./assets/logos/html5Logo.png" alt="html5Logo" />
-                              <span>HTML5</span>
-                          </li>
-                          <li>
-                              <img src="./assets/logos/cssLogo.png" alt="cssLogo" />
-                              <span>CSS </span>
-                          </li>
-                          <li>
-                              <img src="./assets/logos/bootstrapLogo.png" alt="bootstrapLogo" />
-                              <span> Bootstrap</span>
-                          </li>
-                          <li>
-                              <img src="./assets/logos/reactLogo.png" alt="React " />
-                              <span> React</span>
-                          </li>
-                          <li>
-                              <img src="./assets/logos/expressLogo.png " alt="expressLogo" />
-                              <span>Express</span>
-                          </li>
-                          <li>
-                              <img src="./assets/logos/mongoLogo.png" alt="NoSql MongoDB Logo" />
-                              <span>NoSql MongoDB</span>
-                          </li>
-                      </ul>
-                  </div>
-  
-  
-                  <div class="row-content col-12 col-md-4">
-                      <h5 class="text-center text-color"> Database Administration </h5>
-                      <ul class="no-bullets text-color">
-                          <li>
-                              <img src="./assets/logos/javaLogo.png" alt="JDBC Logo" />
-                              <span>JDBC</span>
-                          </li>
-                          <li>
-                              <img src="./assets/logos/SQLLogo.png" alt="SQL Logo" />
-                              <span>SQL</span>
-                          </li>
-                          <li>
-                              <img src="./assets/logos/mySqlLogo.png" alt="mySql Logo" />
-                              <span>mySql</span>
-                          </li>
-                          <li>
-                              <img src="./assets/logos/apacheLogo.png" alt="Apache Logo" />
-                              <span>Apache</span>
-                          </li>
-                          <li>
-                              <img src="./assets/logos/mongooseLogo.png" alt="Mongoose Logo" />
-                              <span>Mongoose</span>
-                          </li>
-                          <li>
-                              <img src="./assets/logos/MongoLogo.png" alt="NoSql MongoDB Logo" />
-                              <span>NoSql MongoDB</span>
-                          </li>
-                      </ul>
-                  </div>
-                  <div class="row-content col-12 col-md-4 ">
-                      <h5 class="text-center text-color"> Application Development </h5>
-                      <ul class="no-bullets text-color">
-                          <li>
-                              <img src="./assets/logos/reactLogo.png" alt="React Logo" />
-                              <span>React Native</span>
-                          </li>
-                          <li>
-                              <img src="./assets/logos/swiftLogo.png " alt="Swift Logo" />
-                              <span>Swift</span>
-                          </li>
-                          <li>
-                              <img src="./assets/logos/javaLogo.png " alt="Java " />
-                              <span>Java</span>
-                          </li>
-                      </ul>
-  
-                  </div>
+                <div className=" row-content col-12 col-md-4">
+                  <h5 className="text-center text-color"> FullStack Web Development</h5>
+                  <ul className="no-bullets text-color">
+                    <li>
+                      <img src="./assets/logos/javascriptLogo.png" alt="JavascriptLogo.png" />
+                      <span>React</span>
+                    </li>
+                    <li>
+                      <img src="./assets/logos/html5Logo.png" alt="html5Logo" />
+                      <span>HTML5</span>
+                    </li>
+                    <li>
+                      <img src="./assets/logos/cssLogo.png" alt="cssLogo" />
+                      <span>CSS </span>
+                    </li>
+                    <li>
+                      <img src="./assets/logos/bootstrapLogo.png" alt="bootstrapLogo" />
+                      <span> Bootstrap</span>
+                    </li>
+                    <li>
+                      <img src="./assets/logos/reactLogo.png" alt="React " />
+                      <span> React</span>
+                    </li>
+                    <li>
+                      <img src="./assets/logos/expressLogo.png " alt="expressLogo" />
+                      <span>Express</span>
+                    </li>
+                    <li>
+                      <img src="./assets/logos/mongoLogo.png" alt="NoSql MongoDB Logo" />
+                      <span>NoSql MongoDB</span>
+                    </li>
+                  </ul>
+                </div>
+
+
+                <div class="row-content col-12 col-md-4">
+                  <h5 class="text-center text-color"> Database Administration </h5>
+                  <ul class="no-bullets text-color">
+                    <li>
+                      <img src="./assets/logos/javaLogo.png" alt="JDBC Logo" />
+                      <span>JDBC</span>
+                    </li>
+                    <li>
+                      <img src="./assets/logos/SQLLogo.png" alt="SQL Logo" />
+                      <span>SQL</span>
+                    </li>
+                    <li>
+                      <img src="./assets/logos/mySqlLogo.png" alt="mySql Logo" />
+                      <span>mySql</span>
+                    </li>
+                    <li>
+                      <img src="./assets/logos/apacheLogo.png" alt="Apache Logo" />
+                      <span>Apache</span>
+                    </li>
+                    <li>
+                      <img src="./assets/logos/mongooseLogo.png" alt="Mongoose Logo" />
+                      <span>Mongoose</span>
+                    </li>
+                    <li>
+                      <img src="./assets/logos/MongoLogo.png" alt="NoSql MongoDB Logo" />
+                      <span>NoSql MongoDB</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="row-content col-12 col-md-4 ">
+                  <h5 class="text-center text-color"> Application Development </h5>
+                  <ul class="no-bullets text-color">
+                    <li>
+                      <img src="./assets/logos/reactLogo.png" alt="React Logo" />
+                      <span>React Native</span>
+                    </li>
+                    <li>
+                      <img src="./assets/logos/swiftLogo.png " alt="Swift Logo" />
+                      <span>Swift</span>
+                    </li>
+                    <li>
+                      <img src="./assets/logos/javaLogo.png " alt="Java " />
+                      <span>Java</span>
+                    </li>
+                  </ul>
+
+                </div>
               </div>
-          </div>
-      </section>
-      <h2 class="text-center text-color">Today's Featured Works</h2>
+            </div>
+          </section>
+          <h2 class="text-center text-color">Today's Featured Works</h2>
           <div className="row justify-content-center m-1 d-flex">
 
             <div className="col-12 col-sm col-md-3">
