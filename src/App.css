@@ -13,11 +13,6 @@
     color: floralwhite;
 }
 
-.img-container {
-    position: relative;
-    display: inline-block;
-}
-
 .cardStyle {
     display: 'block';
     width: '30vw';
@@ -59,4 +54,25 @@ ul.no-bullets {
 
 .nowrap {
     white-space: nowrap;
+}
+
+.page-enter {
+    opacity: 0.01;
+    transform: trranslateX(-100%);
+}
+
+.page-enter-active {
+    opacity: 1;
+    transform: translateX(0%);
+}
+
+.page-exit {
+    opacity: 1;
+    transform: translateX(0%);
+}
+
+.page-exit-active {
+    opacity: 0.01;
+    transform: translateX(100%);
+    transition: all 300ms ease-out;
 }
