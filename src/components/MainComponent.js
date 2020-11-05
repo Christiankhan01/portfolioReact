@@ -7,7 +7,7 @@ import Footer from './FooterComponent';
 import Contact from './ContactComponent';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux'; 
-import { PROJECTS } from '../shared/projects';
+
 
 
 import Image from 'react-bootstrap/Image'

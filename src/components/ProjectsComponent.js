@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Card, CardImg, CardText, CardBody, CardTitle, Breadcrumb, BreadcrumbItem } from 'reactstrap';
+import { Card, CardImg, CardText, CardBody, CardTitle, Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
 
@@ -26,17 +26,19 @@ class ProjectsMenu extends Component {
                 <div className=" row-content col-12 col-md-12">
                     <div className="text-center">
                         <Card>
-                            <CardBody >
-                                <img src={project.image2} alt="" />
-                                <img src={project.image3} alt="" />
-                                <img src={project.image4} alt="" />
-                                <img src={project.image5} alt="" />
-                                <img src={project.image6} alt="" />
-                                <CardTitle>{project.name}</CardTitle>
-                                <CardText>{project.description}</CardText>
-                                <CardText>{project.label}</CardText>
-                                <a href={project.link}>{project.word}</a>
-                            </CardBody>
+
+                                <CardBody >
+                                    <img src={project.image2} alt="" />
+                                    <img src={project.image3} alt="" />
+                                    <img src={project.image4} alt="" />
+                                    <img src={project.image5} alt="" />
+                                    <img src={project.image6} alt="" />
+                                    <CardTitle>{project.name}</CardTitle>
+                                    <CardText>{project.description}</CardText>
+                                    <CardText>{project.label}</CardText>
+                                    <a href={project.link}>{project.word}</a>
+                                </CardBody>
+
                         </Card>
                     </div>
                 </div>
