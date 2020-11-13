@@ -7,7 +7,9 @@ import Footer from './FooterComponent';
 import Contact from './ContactComponent';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import Image from 'react-bootstrap/Image'
+import Image from 'react-bootstrap/Image'; 
+import { TransitionGroup, CSSTransition } from 'react-transition-group'; 
+
 
 const mapStateToProps = state => {
   return {
@@ -126,9 +128,8 @@ class Main extends Component {
               </div>
             </div>
           </section>
-          <h2 class="text-center text-color">Today's Featured Works</h2>
+          <h2 class="text-center text-color">Some Featured Works</h2>
           <div className="row justify-content-center m-1 d-flex">
-
             <div className="col-12 col-sm col-md-3">
               <Home project={this.props.projects.filter((project) => project.featured)[0]} />
             </div>
@@ -144,13 +145,17 @@ class Main extends Component {
       <body className="body-color">
         <div>
           <Header />
-              <Switch>
-                <Route path="/home" component={HomePage} />
-                <Route exact path="/projects" component={() => <ProjectsMenu projects={this.props.projects} />} />
-                <Route exact path="/about" component={About} />
-                <Route exact path="/contact" component={Contact} />
-                <Redirect to="/home" />
-              </Switch>
+          <TransitionGroup>
+          <CSSTransition key={this.props.location.key} classNames="page" timeout={300}>
+          <Switch>
+            <Route path="/home" component={HomePage} />
+            <Route exact path="/projects" component={() => <ProjectsMenu projects={this.props.projects} />} />
+            <Route exact path="/about" component={About} />
+            <Route exact path="/contact" component={Contact} />
+            <Redirect to="/home" />
+          </Switch>
+          </CSSTransition>
+          </TransitionGroup>
           <Footer />
         </div >
       </body>

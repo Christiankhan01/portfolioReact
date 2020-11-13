@@ -1,5 +1,8 @@
 import React from 'react';
 import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
+import Image from 'react-bootstrap/Image'; 
+
+
 
 function RenderCard({ item }) {
 
@@ -22,6 +25,7 @@ function RenderCard({ item }) {
 
 function Home(props) {
     return (
+        
         <div className="container">
             <div className="row">
                 <RenderCard item={props.project} />

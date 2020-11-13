@@ -3,7 +3,7 @@
 }
 
 .jumbotron {
-    padding: 70px 10px 70px 10px;
+    padding: 50px 10px 50px 10px;
     margin: 0px auto;
     background-color: #141414;
     color: floralwhite;
@@ -58,7 +58,7 @@ ul.no-bullets {
 
 .page-enter {
     opacity: 0.01;
-    transform: trranslateX(-100%);
+    transform: translateX(-100%);
 }
 
 .page-enter-active {
