@@ -24,21 +24,22 @@ class ProjectsMenu extends Component {
     renderProject(project) {
         if (project != null) {
             return (
+                
                 <div className=" row-content col-12 col-md-12">
                     <div className="text-center">
                         <Card>
 
-                                <CardBody >
-                                    <img src={project.image2} alt="" />
-                                    <img src={project.image3} alt="" />
-                                    <img src={project.image4} alt="" />
-                                    <img src={project.image5} alt="" />
-                                    <img src={project.image6} alt="" />
-                                    <CardTitle>{project.name}</CardTitle>
-                                    <CardText>{project.description}</CardText>
-                                    <CardText>{project.label}</CardText>
-                                    <a href={project.link}>{project.word}</a>
-                                </CardBody>
+                            <CardBody >
+                                <img src={project.image2} alt="" />
+                                <img src={project.image3} alt="" />
+                                <img src={project.image4} alt="" />
+                                <img src={project.image5} alt="" />
+                                <img src={project.image6} alt="" />
+                                <CardTitle>{project.name}</CardTitle>
+                                <CardText>{project.description}</CardText>
+                                <CardText>{project.label}</CardText>
+                                <a href={project.link}>{project.word}</a>
+                            </CardBody>
 
                         </Card>
                     </div>
@@ -70,7 +71,37 @@ class ProjectsMenu extends Component {
         console.log('Menu Component render is invoked');
 
         return (
+            
             <div className="container">
+            <header class="jumbotron">
+                <div class="row row-header">
+                    <div class="col-12 col-sm-12 col-md-12">
+                        <h1 class="text-center">About me</h1>
+                        <p>Hi, my name is Christian Khan. I am a Computer Programmer and fullstack web developer in Toronto, who can build web applications from scratch. I enjoy creating functional applications for the web, desktop or mobile. Working with ReactJS
+                        within the MERN framework has become one of my hobbies as i explore the <i>"code once deploy
+                            everywhere"</i> approach to web development.
+                    </p>
+                    </div>
+                </div>
+                <div class="row offset-1">
+                    <div class="col-12 col-sm-3 col-md-3">
+                        <img src="assets/logos/MongoLogo.png" alt="NoSql MongoDB Logo" />
+                        <p>MongoDB</p>
+                    </div>
+                    <div class="  col-12 col-sm-3 col-md-3">
+                        <img src="assets/logos/expressLogo.png " alt="expressLogo" />
+                        <p>Express</p>
+                    </div>
+                    <div class="  col-12 col-sm-3 col-md-3">
+                        <img src="assets/logos/reactLogo.png" alt="React " />
+                        <p> React</p>
+                    </div>
+                    <div class="  col-12 col-sm-3 col-md-3">
+                        <img src="assets/logos/nodeLogo.png" alt="NoSql MongoDB Logo" />
+                        <p>NodeJS</p>
+                    </div>
+                </div>
+            </header>
                 <div className="body-color">
                     <div className="row">
                         <Breadcrumb className="text-color">
@@ -95,5 +126,4 @@ class ProjectsMenu extends Component {
 }
 
 export default ProjectsMenu;
-// 
-   
+//
