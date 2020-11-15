@@ -94,10 +94,8 @@ class ProjectsMenu extends Component {
                     <header class="jumbotron">
                         <div class="row row-header">
                             <div class="col-12 col-sm-12 col-md-12">
-                                <h1 class="text-center">About me</h1>
-                                <p>Hi, my name is Christian Khan. I am a Computer Programmer and fullstack web developer in Toronto, who can build web applications from scratch. I enjoy creating functional applications for the web, desktop or mobile. Working with ReactJS
-                        within the MERN framework has become one of my hobbies as i explore the <i>"code once deploy
-                            everywhere"</i> approach to web development.
+                                <h1 class="text-center">Some of my Projects</h1>
+                                <p>Welcome to the projects section of my portfolio. 
                     </p>
                             </div>
                         </div>

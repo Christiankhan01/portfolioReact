@@ -5,11 +5,12 @@ import About from './AboutComponent';
 import Header from './HeaderComponent';
 import Footer from './FooterComponent';
 import Contact from './ContactComponent';
+import Image from 'react-bootstrap/Image';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { fetchProjects } from '../redux/ActionCreators';
-import Image from 'react-bootstrap/Image';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
+import { actions } from 'react-redux-form'; 
 
 
 const mapStateToProps = state => {
@@ -19,8 +20,9 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchProjects: () => { dispatch(fetchProjects()) }
-})
+  fetchProjects: () => { dispatch(fetchProjects()) },
+  resetFeedbackForm: () => {dispatch(actions.reset('feedback'))}
+}); 
 
 class Main extends Component {
   constructor(props) {
@@ -39,8 +41,7 @@ class Main extends Component {
             <div className="row row-header ">
               <div className="col-12 col-sm-6 col-md-6 ">
                 <h1>FullStack Web Developer</h1>
-                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>Welcome to my portfolio web application. This portoflio will demonstrate my skills in <b>Fullstack Web Development</b> using the MERN (Mongodb, ExpressJS, ReactJS and NodeJS) stack. Plese feel free to leave any feedback for me which can be found the in Contacts section of this application. blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah  </p>
               </div>
               <div className="align-self-center col-12 col-sm-6 col-md-6">
                 <Image src="assets/logos/devLogo.png" fluid alt="Developer Image" />
@@ -164,7 +165,7 @@ class Main extends Component {
                 <Route path="/home" component={HomePage} />
                 <Route exact path="/projects" component={() => <ProjectsMenu projects={this.props.projects} />} />
                 <Route exact path="/about" component={About} />
-                <Route exact path="/contact" component={Contact} />
+                <Route exact path="/contact" component={() => <Contact resetFeedbackForm={this.props.resetFeedbackForm} />} />
                 <Redirect to="/home" />
               </Switch>
             </CSSTransition>
