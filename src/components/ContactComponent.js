@@ -32,9 +32,7 @@ class Contact extends Component {
                 <div class="row row-header">
                     <div class="col-12 col-sm-12 col-md-12">
                         <h1 class="text-center">About me</h1>
-                        <p>Hi, my name is Christian Khan. I am a Computer Programmer and fullstack web developer in Toronto, who can build web applications from scratch. I enjoy creating functional applications for the web, desktop or mobile. Working with ReactJS
-                        within the MERN framework has become one of my hobbies as i explore the <i>"code once deploy
-                            everywhere"</i> approach to web development.
+                        <p>Have great idea for an app or website? Feel free to contact me!
                     </p>
                     </div>
                 </div>
@@ -94,7 +92,7 @@ class Contact extends Component {
                         </div>
                         <div className="col-12 col-md-9">
                             <LocalForm onSubmit={(values) => this.handleSubmit(values)}>
-                                <Row classname="form-group">
+                                <Row className="form-group">
                                     <Label htmlFor="firstName" md={2} className="text-color">First Name</Label>
                                     <Col md={10}>
                                         <Control.text model=".firstName" id="firstName" name="firstName"

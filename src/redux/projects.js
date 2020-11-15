@@ -1,8 +1,19 @@
-import { PROJECTS } from '../shared/projects';
+import * as ActionTypes from './ActionTypes';
 
-export const Projects = (state = PROJECTS, action) => {
-    switch(action.type) {
-        default: 
-        return state; 
+
+export const Projects = (state = {
+    isLoading: true,
+    errMess: null,
+    projects: []
+}, action) => {
+    switch (action.type) {
+        case ActionTypes.ADD_PROJECTS:
+            return { ...state, isLoading: false, errMess: null, projects: action.payload };
+        case ActionTypes.PROJECTS_LOADING:
+            return { ...state, isLoading: true, errMess: null, dishes: [] }
+        case ActionTypes.PROJECTS_FAILED:
+            return { ...state, isLoading: false, errMess: action.payload };
+        default:
+            return state;
     }
 }

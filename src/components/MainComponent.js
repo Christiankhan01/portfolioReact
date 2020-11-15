@@ -7,8 +7,9 @@ import Footer from './FooterComponent';
 import Contact from './ContactComponent';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import Image from 'react-bootstrap/Image'; 
-import { TransitionGroup, CSSTransition } from 'react-transition-group'; 
+import { fetchProjects } from '../redux/ActionCreators';
+import Image from 'react-bootstrap/Image';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 
 const mapStateToProps = state => {
@@ -16,11 +17,18 @@ const mapStateToProps = state => {
     projects: state.projects
   }
 }
+
+const mapDispatchToProps = (dispatch) => ({
+  fetchProjects: () => { dispatch(fetchProjects()) }
+})
+
 class Main extends Component {
   constructor(props) {
     super(props);
+  }
 
-
+  componentDidMount() {
+    this.props.fetchProjects();
   }
 
   render() {
@@ -131,10 +139,15 @@ class Main extends Component {
           <h2 class="text-center text-color">Some Featured Works</h2>
           <div className="row justify-content-center m-1 d-flex">
             <div className="col-12 col-sm col-md-3">
-              <Home project={this.props.projects.filter((project) => project.featured)[0]} />
+              <Home project={this.props.projects.projects.filter((project) => project.featured)[0]}
+                    projectsLoading={this.props.projects.isLoading}
+                    projectsErrMess={this.props.projects.errMess}
+              />
             </div>
             <div className="col-12 col-sm col-md-3">
-              <Home project={this.props.projects.filter((project) => project.featured)[1]} />
+              <Home project={this.props.projects.projects.filter((project) => project.featured)[1]}
+              projectsLoading={this.props.projects.isLoading}
+              projectsErrMess={this.props.projects.errMess} />
 
             </div>
           </div>
@@ -146,15 +159,15 @@ class Main extends Component {
         <div>
           <Header />
           <TransitionGroup>
-          <CSSTransition key={this.props.location.key} classNames="page" timeout={300}>
-          <Switch>
-            <Route path="/home" component={HomePage} />
-            <Route exact path="/projects" component={() => <ProjectsMenu projects={this.props.projects} />} />
-            <Route exact path="/about" component={About} />
-            <Route exact path="/contact" component={Contact} />
-            <Redirect to="/home" />
-          </Switch>
-          </CSSTransition>
+            <CSSTransition key={this.props.location.key} classNames="page" timeout={300}>
+              <Switch>
+                <Route path="/home" component={HomePage} />
+                <Route exact path="/projects" component={() => <ProjectsMenu projects={this.props.projects} />} />
+                <Route exact path="/about" component={About} />
+                <Route exact path="/contact" component={Contact} />
+                <Redirect to="/home" />
+              </Switch>
+            </CSSTransition>
           </TransitionGroup>
           <Footer />
         </div >
@@ -163,4 +176,4 @@ class Main extends Component {
   }
 }
 
-export default withRouter(connect(mapStateToProps)(Main));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Main));
