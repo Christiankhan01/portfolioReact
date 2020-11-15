@@ -1,12 +1,14 @@
 import * as ActionTypes from './ActionTypes';
 import { PROJECTS } from '../shared/projects';
+import { baseUrl } from '../shared/baseUrl';  
 
 export const fetchProjects = () => (dispatch) => {
     dispatch(projectsLoading(true));
 
-    setTimeout(() => {
-        dispatch(addProjects(PROJECTS));
-    }, 2000);
+//server setup here
+    return fetch(baseUrl + 'projects')
+    .then(response => response.json())
+    .then(projects => dispatch(addProjects(projects)))
 }
 
 export const projectsLoading = () => ({

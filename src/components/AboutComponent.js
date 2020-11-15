@@ -1,6 +1,7 @@
 import React from 'react';
 import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import {baseUrl} from '../shared/baseUrl'; 
 
 function About(props) {
 
@@ -19,19 +20,19 @@ function About(props) {
                 </div>
                 <div class="row offset-1">
                     <div class="col-12 col-sm-3 col-md-3">
-                        <img src="assets/logos/MongoLogo.png" alt="NoSql MongoDB Logo" />
+                        <img src={baseUrl + ("assets/logos/MongoLogo.png")} alt="NoSql MongoDB Logo" />
                         <p>MongoDB</p>
                     </div>
                     <div class="  col-12 col-sm-3 col-md-3">
-                        <img src="assets/logos/expressLogo.png " alt="expressLogo" />
+                        <img src={baseUrl + ("assets/logos/expressLogo.png ")} alt="expressLogo" />
                         <p>Express</p>
                     </div>
                     <div class="  col-12 col-sm-3 col-md-3">
-                        <img src="assets/logos/reactLogo.png" alt="React " />
+                        <img src={baseUrl + ("assets/logos/reactLogo.png")} alt="React " />
                         <p> React</p>
                     </div>
                     <div class="  col-12 col-sm-3 col-md-3">
-                        <img src="assets/logos/nodeLogo.png" alt="NoSql MongoDB Logo" />
+                        <img src={baseUrl + ("assets/logos/nodeLogo.png")} alt="NoSql MongoDB Logo" />
                         <p>NodeJS</p>
                     </div>
                 </div>

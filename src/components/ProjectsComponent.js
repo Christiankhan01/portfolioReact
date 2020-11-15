@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { Card, CardImg, CardText, CardBody, CardTitle, Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { Loading } from './LoadingComponent';
+import { baseUrl } from '../shared/baseUrl'; 
 
 
 class ProjectsMenu extends Component {
@@ -29,19 +30,17 @@ class ProjectsMenu extends Component {
                 <div className=" row-content col-12 col-md-12">
                     <div className="text-center">
                         <Card>
-
                             <CardBody >
-                                <img src={project.image2} alt="" />
-                                <img src={project.image3} alt="" />
-                                <img src={project.image4} alt="" />
-                                <img src={project.image5} alt="" />
-                                <img src={project.image6} alt="" />
+                                <img src={baseUrl + project.image2} alt="" />
+                                <img src={baseUrl + project.image3} alt="" />
+                                <img src={baseUrl + project.image4} alt="" />
+                                <img src={baseUrl + project.image5} alt="" />
+                                <img src={baseUrl + project.image6} alt="" />
                                 <CardTitle>{project.name}</CardTitle>
                                 <CardText>{project.description}</CardText>
                                 <CardText>{project.label}</CardText>
                                 <a href={project.link}>{project.word}</a>
                             </CardBody>
-
                         </Card>
                     </div>
                 </div>
@@ -60,7 +59,7 @@ class ProjectsMenu extends Component {
                     className="col-12 col-sm col-md m-1 d-flex">
                     <Card className="text-center" onClick={() => this.onProjectSelect(project)}>
 
-                        <CardImg width='100%' src={project.image} alt={project.name} />
+                        <CardImg width='100%' src={baseUrl + project.image} alt={project.name} />
                         <CardTitle>{project.name}</CardTitle>
                         <CardText>{project.category}</CardText>
                         <a href={project.link}>{project.word}</a>

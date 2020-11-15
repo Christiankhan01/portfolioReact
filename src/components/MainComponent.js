@@ -10,7 +10,8 @@ import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { fetchProjects } from '../redux/ActionCreators';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
-import { actions } from 'react-redux-form'; 
+import { actions } from 'react-redux-form';
+import {baseUrl} from '../shared/baseUrl'; 
 
 
 const mapStateToProps = state => {
@@ -21,8 +22,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = (dispatch) => ({
   fetchProjects: () => { dispatch(fetchProjects()) },
-  resetFeedbackForm: () => {dispatch(actions.reset('feedback'))}
-}); 
+  resetFeedbackForm: () => { dispatch(actions.reset('feedback')) }
+});
 
 class Main extends Component {
   constructor(props) {
@@ -44,7 +45,7 @@ class Main extends Component {
                 <p>Welcome to my portfolio web application. This portoflio will demonstrate my skills in <b>Fullstack Web Development</b> using the MERN (Mongodb, ExpressJS, ReactJS and NodeJS) stack. Plese feel free to leave any feedback for me which can be found the in Contacts section of this application. blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah  </p>
               </div>
               <div className="align-self-center col-12 col-sm-6 col-md-6">
-                <Image src="assets/logos/devLogo.png" fluid alt="Developer Image" />
+                <Image src={baseUrl + ("assets/logos/devLogo.png")} fluid alt="Developer Image" />
               </div>
             </div>
           </header>
@@ -56,31 +57,31 @@ class Main extends Component {
                   <h5 className="text-center text-color"> FullStack Web Development</h5>
                   <ul className="no-bullets text-color">
                     <li>
-                      <img src="./assets/logos/javascriptLogo.png" alt="JavascriptLogo.png" />
-                      <span>React</span>
+                      <img src={baseUrl + ("./assets/logos/javascriptLogo.png")} alt="JavascriptLogo.png" />
+                      <span>Javascript ES6</span>
                     </li>
                     <li>
-                      <img src="./assets/logos/html5Logo.png" alt="html5Logo" />
+                      <img src={baseUrl + ("./assets/logos/html5Logo.png")} alt="html5Logo" />
                       <span>HTML5</span>
                     </li>
                     <li>
-                      <img src="./assets/logos/cssLogo.png" alt="cssLogo" />
+                      <img src={baseUrl + ("./assets/logos/cssLogo.png")} alt="cssLogo" />
                       <span>CSS </span>
                     </li>
                     <li>
-                      <img src="./assets/logos/bootstrapLogo.png" alt="bootstrapLogo" />
+                      <img src={baseUrl + ("./assets/logos/bootstrapLogo.png")} alt="bootstrapLogo" />
                       <span> Bootstrap</span>
                     </li>
                     <li>
-                      <img src="./assets/logos/reactLogo.png" alt="React " />
+                      <img src={baseUrl + ("./assets/logos/reactLogo.png")} alt="React " />
                       <span> React</span>
                     </li>
                     <li>
-                      <img src="./assets/logos/expressLogo.png " alt="expressLogo" />
+                      <img src={baseUrl + ("./assets/logos/expressLogo.png ")} alt="expressLogo" />
                       <span>Express</span>
                     </li>
                     <li>
-                      <img src="./assets/logos/mongoLogo.png" alt="NoSql MongoDB Logo" />
+                      <img src={baseUrl + ("./assets/logos/mongoLogo.png")} alt="NoSql MongoDB Logo" />
                       <span>NoSql MongoDB</span>
                     </li>
                   </ul>
@@ -91,27 +92,27 @@ class Main extends Component {
                   <h5 class="text-center text-color"> Database Administration </h5>
                   <ul class="no-bullets text-color">
                     <li>
-                      <img src="./assets/logos/javaLogo.png" alt="JDBC Logo" />
+                      <img src={baseUrl + ("./assets/logos/javaLogo.png")} alt="JDBC Logo" />
                       <span>JDBC</span>
                     </li>
                     <li>
-                      <img src="./assets/logos/SQLLogo.png" alt="SQL Logo" />
+                      <img src={baseUrl + ("./assets/logos/SQLLogo.png")} alt="SQL Logo" />
                       <span>SQL</span>
                     </li>
                     <li>
-                      <img src="./assets/logos/mySqlLogo.png" alt="mySql Logo" />
+                      <img src={baseUrl + ("./assets/logos/mySqlLogo.png")} alt="mySql Logo" />
                       <span>mySql</span>
                     </li>
                     <li>
-                      <img src="./assets/logos/apacheLogo.png" alt="Apache Logo" />
+                      <img src={baseUrl + ("./assets/logos/apacheLogo.png")} alt="Apache Logo" />
                       <span>Apache</span>
                     </li>
                     <li>
-                      <img src="./assets/logos/mongooseLogo.png" alt="Mongoose Logo" />
+                      <img src={baseUrl + ("./assets/logos/mongooseLogo.png")} alt="Mongoose Logo" />
                       <span>Mongoose</span>
                     </li>
                     <li>
-                      <img src="./assets/logos/MongoLogo.png" alt="NoSql MongoDB Logo" />
+                      <img src={baseUrl + ("./assets/logos/MongoLogo.png")} alt="NoSql MongoDB Logo" />
                       <span>NoSql MongoDB</span>
                     </li>
                   </ul>
@@ -120,19 +121,18 @@ class Main extends Component {
                   <h5 class="text-center text-color"> Application Development </h5>
                   <ul class="no-bullets text-color">
                     <li>
-                      <img src="./assets/logos/reactLogo.png" alt="React Logo" />
+                      <img src={baseUrl + ("./assets/logos/reactLogo.png")} alt="React Logo" />
                       <span>React Native</span>
                     </li>
                     <li>
-                      <img src="./assets/logos/swiftLogo.png " alt="Swift Logo" />
+                      <img src={baseUrl + ("./assets/logos/swiftLogo.png ")} alt="Swift Logo" />
                       <span>Swift</span>
                     </li>
                     <li>
-                      <img src="./assets/logos/javaLogo.png " alt="Java " />
+                      <img src={baseUrl + ("./assets/logos/javaLogo.png ")} alt="Java " />
                       <span>Java</span>
                     </li>
                   </ul>
-
                 </div>
               </div>
             </div>
@@ -141,14 +141,14 @@ class Main extends Component {
           <div className="row justify-content-center m-1 d-flex">
             <div className="col-12 col-sm col-md-3">
               <Home project={this.props.projects.projects.filter((project) => project.featured)[0]}
-                    projectsLoading={this.props.projects.isLoading}
-                    projectsErrMess={this.props.projects.errMess}
+                projectsLoading={this.props.projects.isLoading}
+                projectsErrMess={this.props.projects.errMess}
               />
             </div>
             <div className="col-12 col-sm col-md-3">
               <Home project={this.props.projects.projects.filter((project) => project.featured)[1]}
-              projectsLoading={this.props.projects.isLoading}
-              projectsErrMess={this.props.projects.errMess} />
+                projectsLoading={this.props.projects.isLoading}
+                projectsErrMess={this.props.projects.errMess} />
 
             </div>
           </div>
