@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Breadcrumb, BreadcrumbItem, Button, Label, Col, Row } from 'reactstrap';
-import { Control, Form, Errors, actions } from 'react-redux-form';
+import { Control, Form, Errors } from 'react-redux-form';
 import { Link } from 'react-router-dom';
 
 const required = (val) => val && val.length; 
@@ -31,29 +31,13 @@ class Contact extends Component {
                 <div className="container">
                 <header class="jumbotron">
                 <div class="row row-header">
-                    <div class="col-12 col-sm-12 col-md-12">
+                    <div class="text-center col-12 col-sm-12 col-md-12">
                         <h1 class="text-center">About me</h1>
                         <p>Have great idea for an app or website? Feel free to contact me!
                     </p>
                     </div>
                 </div>
                 <div class="row offset-1">
-                    <div class="col-12 col-sm-3 col-md-3">
-                        <img src="assets/logos/MongoLogo.png" alt="NoSql MongoDB Logo" />
-                        <p>MongoDB</p>
-                    </div>
-                    <div class="  col-12 col-sm-3 col-md-3">
-                        <img src="assets/logos/expressLogo.png " alt="expressLogo" />
-                        <p>Express</p>
-                    </div>
-                    <div class="  col-12 col-sm-3 col-md-3">
-                        <img src="assets/logos/reactLogo.png" alt="React " />
-                        <p> React</p>
-                    </div>
-                    <div class="  col-12 col-sm-3 col-md-3">
-                        <img src="assets/logos/nodeLogo.png" alt="NoSql MongoDB Logo" />
-                        <p>NodeJS</p>
-                    </div>
                 </div>
             </header>
                     <div className="row">

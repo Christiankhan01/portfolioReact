@@ -2,12 +2,6 @@ import React from 'react';
 import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { baseUrl } from '../shared/baseUrl';
-import { Document, Page } from 'react-pdf';
-import samplePDF from '../myResume.pdf';
-
-
-
-
 
 
 
@@ -62,7 +56,7 @@ function About(props) {
                                 <h2>My History</h2>
                             </CardHeader>
                             <CardBody>
-                                <p>Hi, my name is Christian Khan. I am a Computer Programmer and fullstack web developer in Toronto, who can build web applications from scratch. I enjoy creating functional applications for the web, desktop or mobile. Working with ReactJS within the MERN framework has become one of my hobbies as i explore the web and internet </p>
+                                <p>A graduate of the Information Technology Program at York University, earning a BA, I have taken the extra steps to specialize in Fullstack Web Development with React by earning a Coursera Specialization as i believe it to be the future of web development. Along with the traditional LAMP stack, i also know the MERN stack and hope to grow my skills further through continuous learning. </p>
                             </CardBody>
                         </Card>
                     </div>
@@ -73,7 +67,7 @@ function About(props) {
                         <CardHeader className="bg-primary text-white"><h2>Facts At a Glance</h2></CardHeader>
                         <CardBody>
                             <div className="">
-                                <dl className="row ">
+                                <dl className="row row-eq-height">
                                     <dt className="col-6">Alma Matter</dt>
                                     <dd className="col-6">York University</dd>
                                     <dt className="col-6">Graduated</dt>
@@ -84,12 +78,15 @@ function About(props) {
                                     <dd className="col-6">5 September 2020</dd>
                                     <dt className="col-6">Programming Languages</dt>
                                     <dd className="col-6">3</dd>
+                                    
+                                    
                                 </dl>
                             </div>
                         </CardBody>
                     </Card>
                 </div>
-
+                </div>
+                <div className="row">
                 <div className="col-12">
                     <Card>
                         <CardBody className="bg-faded">

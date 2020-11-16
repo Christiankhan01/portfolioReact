@@ -1,5 +1,4 @@
 import * as ActionTypes from './ActionTypes';
-import { PROJECTS } from '../shared/projects';
 import { baseUrl } from '../shared/baseUrl';
 
 export const fetchProjects = () => (dispatch) => {

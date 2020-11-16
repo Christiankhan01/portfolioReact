@@ -11,7 +11,9 @@ import { connect } from 'react-redux';
 import { fetchProjects } from '../redux/ActionCreators';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { actions } from 'react-redux-form';
-import {baseUrl} from '../shared/baseUrl'; 
+import { baseUrl } from '../shared/baseUrl';
+import { Fade } from 'react-animation-components'
+
 
 
 const mapStateToProps = state => {
@@ -24,6 +26,7 @@ const mapDispatchToProps = (dispatch) => ({
   fetchProjects: () => { dispatch(fetchProjects()) },
   resetFeedbackForm: () => { dispatch(actions.reset('feedback')) }
 });
+
 
 class Main extends Component {
   constructor(props) {
@@ -42,19 +45,19 @@ class Main extends Component {
             <div className="row row-header ">
               <div className="col-12 col-sm-6 col-md-6 ">
                 <h1>FullStack Web Developer</h1>
-                <p>Welcome to my portfolio web application. This portoflio will demonstrate my skills in <b>Fullstack Web Development</b> using the MERN (Mongodb, ExpressJS, ReactJS and NodeJS) stack. Plese feel free to leave any feedback for me which can be found the in Contacts section of this application. blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah  </p>
+                <h5>Welcome to my portfolio web application. This portoflio will demonstrate my skills in <font color="#007bff">Fullstack Web Development</font> using the MERN (Mongodb, ExpressJS, ReactJS and NodeJS) stack. Plese feel free to leave any feedback for me which can be found the in Contacts section of this application. Thank You and Happy Browsing!</h5>
               </div>
               <div className="align-self-center col-12 col-sm-6 col-md-6">
                 <Image src={baseUrl + ("assets/logos/devLogo.png")} fluid alt="Developer Image" />
               </div>
             </div>
           </header>
-          <section>
-            <div className="container">
-              <h2 className="text-center text-color">My Skills</h2>
-              <div className="row  ">
-                <div className=" row-content col-12 col-md-4">
-                  <h5 className="text-center text-color"> FullStack Web Development</h5>
+          <div className="container">
+            <h2 className="text-center text-color">My Skills</h2>
+            <div className="row  ">
+              <div className=" row-content col-12 col-md-4">
+                <h5 className="text-center text-color"> FullStack Web Development</h5>
+                <Fade in>
                   <ul className="no-bullets text-color">
                     <li>
                       <img src={baseUrl + ("./assets/logos/javascriptLogo.png")} alt="JavascriptLogo.png" />
@@ -85,11 +88,13 @@ class Main extends Component {
                       <span>NoSql MongoDB</span>
                     </li>
                   </ul>
-                </div>
+                </Fade>
+              </div>
 
 
-                <div class="row-content col-12 col-md-4">
-                  <h5 class="text-center text-color"> Database Administration </h5>
+              <div class="row-content col-12 col-md-4">
+                <h5 class="text-center text-color"> Database Administration </h5>
+                <Fade in>
                   <ul class="no-bullets text-color">
                     <li>
                       <img src={baseUrl + ("./assets/logos/javaLogo.png")} alt="JDBC Logo" />
@@ -116,28 +121,30 @@ class Main extends Component {
                       <span>NoSql MongoDB</span>
                     </li>
                   </ul>
-                </div>
-                <div class="row-content col-12 col-md-4 ">
-                  <h5 class="text-center text-color"> Application Development </h5>
-                  <ul class="no-bullets text-color">
-                    <li>
-                      <img src={baseUrl + ("./assets/logos/reactLogo.png")} alt="React Logo" />
-                      <span>React Native</span>
-                    </li>
-                    <li>
-                      <img src={baseUrl + ("./assets/logos/swiftLogo.png ")} alt="Swift Logo" />
-                      <span>Swift</span>
-                    </li>
-                    <li>
-                      <img src={baseUrl + ("./assets/logos/javaLogo.png ")} alt="Java " />
-                      <span>Java</span>
-                    </li>
-                  </ul>
-                </div>
+                </Fade>
+              </div>
+              <div class="row-content col-12 col-md-4 ">
+                <h5 class="text-center text-color"> Application Development </h5>
+                <Fade in enterOpacity={0.95}>
+                <ul class="no-bullets text-color">
+                  <li>
+                    <img src={baseUrl + ("./assets/logos/reactLogo.png")} alt="React Logo" />
+                    <span>React Native</span>
+                  </li>
+                  <li>
+                    <img src={baseUrl + ("./assets/logos/swiftLogo.png ")} alt="Swift Logo" />
+                    <span>Swift</span>
+                  </li>
+                  <li>
+                    <img src={baseUrl + ("./assets/logos/javaLogo.png ")} alt="Java " />
+                    <span>Java</span>
+                  </li>
+                </ul>
+                </Fade>
               </div>
             </div>
-          </section>
-          <h2 class="text-center text-color">Some Featured Works</h2>
+          </div>
+        {/*  <h2 class="text-center text-color">Some Featured Works</h2>
           <div className="row justify-content-center m-1 d-flex">
             <div className="col-12 col-sm col-md-3">
               <Home project={this.props.projects.projects.filter((project) => project.featured)[0]}
@@ -148,10 +155,12 @@ class Main extends Component {
             <div className="col-12 col-sm col-md-3">
               <Home project={this.props.projects.projects.filter((project) => project.featured)[1]}
                 projectsLoading={this.props.projects.isLoading}
-                projectsErrMess={this.props.projects.errMess} />
+                projectsErrMess={this.props.projects.errMess}
+                 />
 
             </div>
           </div>
+      </div>  */}
         </div>
       );
     }
@@ -174,7 +183,7 @@ class Main extends Component {
         </div >
       </body>
     );
-  }
+    }
 }
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Main));

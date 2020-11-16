@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { Loading } from './LoadingComponent';
 import Image from 'react-bootstrap/Image';
 import { baseUrl } from '../shared/baseUrl';
-import { FadeTransform, Fade, Stagger } from 'react-animation-components';
+import { FadeTransform } from 'react-animation-components';
 
 
 class ProjectsMenu extends Component {
@@ -100,7 +100,7 @@ class ProjectsMenu extends Component {
                         <div className="row row-header">
                             <div className="text-center col-12 col-sm-12 col-md-12">
                                 <h1>Projects</h1>
-                                <p>Welcome to the projects sections of my portfolio. Weather small widgets with less than 100 lines of code, or larger applications with 300 + lines of code, here you will find a variety of applications.  </p>
+                                <h5>Welcome to the projects sections of my portfolio. Weather small widgets with less than 100 lines of code, or larger applications with 300 + lines of code, here you will find a variety of applications.  </h5>
                             </div>
                         </div>
                         <div className="row">
