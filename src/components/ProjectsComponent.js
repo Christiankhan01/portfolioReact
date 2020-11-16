@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 import { Card, CardImg, CardText, CardBody, CardTitle, Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { Loading } from './LoadingComponent';
-import { baseUrl } from '../shared/baseUrl'; 
+import Image from 'react-bootstrap/Image';
+import { baseUrl } from '../shared/baseUrl';
 
 
 class ProjectsMenu extends Component {
@@ -92,38 +93,24 @@ class ProjectsMenu extends Component {
                 <div className="container" >
                     <header class="jumbotron">
                         <div class="row row-header">
-                            <div class="col-12 col-sm-12 col-md-12">
-                                <h1 class="text-center">Some of my Projects</h1>
-                                <p>Welcome to the projects section of my portfolio. 
-                    </p>
+                            <div class="text-center col-12 col-sm-12 col-md-12">
+                                <h1>Projects</h1>
+                                <p>Welcome to the projects sections of my portfolio. Weather small widgets with less than 100 lines of code, or larger applications with 300 + lines of code, here you will find a variety of applications.  </p>
                             </div>
                         </div>
-                        <div class="row offset-1">
-                            <div class="col-12 col-sm-3 col-md-3">
-                                <img src="assets/logos/MongoLogo.png" alt="NoSql MongoDB Logo" />
-                                <p>MongoDB</p>
-                            </div>
-                            <div class="  col-12 col-sm-3 col-md-3">
-                                <img src="assets/logos/expressLogo.png " alt="expressLogo" />
-                                <p>Express</p>
-                            </div>
-                            <div class="  col-12 col-sm-3 col-md-3">
-                                <img src="assets/logos/reactLogo.png" alt="React " />
-                                <p> React</p>
-                            </div>
-                            <div class="  col-12 col-sm-3 col-md-3">
-                                <img src="assets/logos/nodeLogo.png" alt="NoSql MongoDB Logo" />
-                                <p>NodeJS</p>
+                        <div className="row">
+                            <div className="col-12 col-sm col-md  ">
+                                <Image className="center-block" src={baseUrl + ("assets/logos/projects.png")} fluid alt="Developer Image" />
                             </div>
                         </div>
-                    </header>
+                    </header>Projects
                     <div className="body-color">
                         <div className="row">
                             <Breadcrumb className="text-color">
                                 <BreadcrumbItem><Link to='/home'>Home</Link></BreadcrumbItem>
                                 <BreadcrumbItem active>Projects</BreadcrumbItem>
                             </Breadcrumb>
-                            <div className="col-12">
+                            <div className="col-12 text-white">
                                 <h3>Projects</h3>
                                 <hr />
                             </div>

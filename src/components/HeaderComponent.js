@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Navbar, NavbarBrand, Nav, NavbarToggler, Collapse, NavItem } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
+import { baseUrl } from '../shared/baseUrl'; 
 
 
 class Header extends Component {
@@ -26,7 +27,7 @@ class Header extends Component {
                     <div className="container">
                     <NavbarToggler onClick={this.toggleNav} />
                         <NavbarBrand className="mr-auto" href="/">
-                            <img src="assets/logos/computeringLogo.png"  alt="Christian Khan" />
+                            <img src={baseUrl + ("assets/logos/computeringLogo.png")}  alt="Christian Khan" />
                         </NavbarBrand>
                         <Collapse isOpen={this.state.isNavOpen} navbar>
                             <Nav navbar>

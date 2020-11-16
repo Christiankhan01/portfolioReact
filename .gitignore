@@ -2,7 +2,7 @@
 .vscode/settings
 # images
 public/assets/ 
-
+src/myResume.pdf
 # dependencies
 /node_modules
 /.pnp

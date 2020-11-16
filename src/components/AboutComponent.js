@@ -1,13 +1,23 @@
 import React from 'react';
 import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import {baseUrl} from '../shared/baseUrl'; 
+import { baseUrl } from '../shared/baseUrl';
+import { Document, Page } from 'react-pdf';
+import samplePDF from '../myResume.pdf';
+
+
+
+
+
+
 
 function About(props) {
-
-
     return (
         <div className="container">
+        <Document file={samplePDF}>
+            <Page pageNumber={1} />
+        </Document>
+
             <header class="jumbotron">
                 <div class="row row-header">
                     <div class="col-12 col-sm-12 col-md-12">
@@ -62,27 +72,27 @@ function About(props) {
                     </div>
                 </div>
 
-                    <div className="col-12 col-md-6">
-                        <Card>
-                            <CardHeader className="bg-primary text-white"><h2>Facts At a Glance</h2></CardHeader>
-                            <CardBody>
-                                <div className="">
-                                    <dl className="row ">
-                                        <dt className="col-6">Alma Matter</dt>
-                                        <dd className="col-6">York University</dd>
-                                        <dt className="col-6">Graduated</dt>
-                                        <dd className="col-6">19 October 2019</dd>
-                                        <dt className="col-6">Degree Major</dt>
-                                        <dd className="col-6">Information Technology</dd>
-                                        <dt className="col-6">Fullstack React Certified</dt>
-                                        <dd className="col-6">5 September 2020</dd>
-                                        <dt className="col-6">Programming Languages</dt>
-                                        <dd className="col-6">3</dd>
-                                    </dl>
-                                </div>
-                            </CardBody>
-                        </Card>
-                    </div>
+                <div className="col-12 col-md-6">
+                    <Card>
+                        <CardHeader className="bg-primary text-white"><h2>Facts At a Glance</h2></CardHeader>
+                        <CardBody>
+                            <div className="">
+                                <dl className="row ">
+                                    <dt className="col-6">Alma Matter</dt>
+                                    <dd className="col-6">York University</dd>
+                                    <dt className="col-6">Graduated</dt>
+                                    <dd className="col-6">19 October 2019</dd>
+                                    <dt className="col-6">Degree Major</dt>
+                                    <dd className="col-6">Information Technology</dd>
+                                    <dt className="col-6">Fullstack React Certified</dt>
+                                    <dd className="col-6">5 September 2020</dd>
+                                    <dt className="col-6">Programming Languages</dt>
+                                    <dd className="col-6">3</dd>
+                                </dl>
+                            </div>
+                        </CardBody>
+                    </Card>
+                </div>
 
                 <div className="col-12">
                     <Card>

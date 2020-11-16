@@ -83,3 +83,9 @@ ul.no-bullets {
     display: -ms-flexbox;
     display: flex;
 }
+
+.center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
