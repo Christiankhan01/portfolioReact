@@ -14,12 +14,8 @@ import samplePDF from '../myResume.pdf';
 function About(props) {
     return (
         <div className="container">
-        <Document file={samplePDF}>
-            <Page pageNumber={1} />
-        </Document>
-
             <header class="jumbotron">
-                <div class="row row-header">
+                <div class="row">
                     <div class="col-12 col-sm-12 col-md-12">
                         <h1 class="text-center">About me</h1>
                         <p>Hi, my name is Christian Khan. I am a Computer Programmer and fullstack web developer in Toronto, who can build web applications from scratch. I enjoy creating functional applications for the web, desktop or mobile. Working with ReactJS
@@ -50,7 +46,7 @@ function About(props) {
             <div className="row">
                 <Breadcrumb>
                     <BreadcrumbItem><Link to="/home">Home</Link></BreadcrumbItem>
-                    <BreadcrumbItem active>About Us</BreadcrumbItem>
+                    <BreadcrumbItem active>About Me</BreadcrumbItem>
                 </Breadcrumb>
                 <div className="col-12">
                     <h3>About Us</h3>

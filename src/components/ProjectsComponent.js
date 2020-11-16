@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { Loading } from './LoadingComponent';
 import Image from 'react-bootstrap/Image';
 import { baseUrl } from '../shared/baseUrl';
+import { FadeTransform, Fade, Stagger } from 'react-animation-components';
 
 
 class ProjectsMenu extends Component {
@@ -29,6 +30,7 @@ class ProjectsMenu extends Component {
             return (
 
                 <div className=" row-content col-12 col-md-12">
+
                     <div className="text-center">
                         <Card>
                             <CardBody >
@@ -56,16 +58,20 @@ class ProjectsMenu extends Component {
     render() {
         const projectsMenu = this.props.projects.projects.map((project) => {
             return (
-                <div key={project.id}
-                    className="col-12 col-sm col-md m-1 d-flex">
-                    <Card className="text-center" onClick={() => this.onProjectSelect(project)}>
+                <div key={project.id} className="col-12 col-sm col-md m-1 d-flex">
 
-                        <CardImg width='100%' src={baseUrl + project.image} alt={project.name} />
-                        <CardTitle>{project.name}</CardTitle>
-                        <CardText>{project.category}</CardText>
-                        <a href={project.link}>{project.word}</a>
+                        <Card className="text-center" onClick={() => this.onProjectSelect(project)}>
+                            <FadeTransform in
+                                transformProps={{
+                                    exitTransform: 'scale(0.5) translateY(-50%)'
+                                }}>
+                                <CardImg width='100%' src={baseUrl + project.image} alt={project.name} />
+                                <CardTitle>{project.name}</CardTitle>
+                                <CardText>{project.category}</CardText>
+                                <a href={project.link}>{project.word}</a>
+                            </FadeTransform>
+                        </Card>
 
-                    </Card>
                 </div>
             );
         });
@@ -89,11 +95,10 @@ class ProjectsMenu extends Component {
         }
         else
             return (
-
                 <div className="container" >
-                    <header class="jumbotron">
-                        <div class="row row-header">
-                            <div class="text-center col-12 col-sm-12 col-md-12">
+                    <header className="jumbotron">
+                        <div className="row row-header">
+                            <div className="text-center col-12 col-sm-12 col-md-12">
                                 <h1>Projects</h1>
                                 <p>Welcome to the projects sections of my portfolio. Weather small widgets with less than 100 lines of code, or larger applications with 300 + lines of code, here you will find a variety of applications.  </p>
                             </div>
