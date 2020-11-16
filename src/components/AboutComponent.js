@@ -46,28 +46,22 @@ function About(props) {
                     <h3>About Us</h3>
                     <hr />
                 </div>
-
             </div>
-            <div className="row row-eq-height">
-                <div className="col-12 col-md-6">
-                    <div>
-                        <Card>
-                            <CardHeader className="bg-primary text-white">
-                                <h2>My History</h2>
-                            </CardHeader>
-                            <CardBody>
-                                <p>A graduate of the Information Technology Program at York University, earning a BA, I have taken the extra steps to specialize in Fullstack Web Development with React by earning a Coursera Specialization as i believe it to be the future of web development. Along with the traditional LAMP stack, i also know the MERN stack and hope to grow my skills further through continuous learning. </p>
-                            </CardBody>
-                        </Card>
-                    </div>
-                </div>
-
-                <div className="col-12 col-md-6">
+            <div className="row">
+                <div className="card-deck">
+                    <Card>
+                        <CardHeader className="bg-primary text-white">
+                            <h2>My History</h2>
+                        </CardHeader>
+                        <CardBody>
+                            <p>A graduate of the Information Technology Program at York University, earning a BA, I have taken the extra steps to specialize in Fullstack Web Development with React by earning a Coursera Specialization as i believe it to be the future of web development. Along with the traditional LAMP stack, i also know the MERN stack and hope to grow my skills further through continuous learning. </p>
+                        </CardBody>
+                    </Card>
                     <Card>
                         <CardHeader className="bg-primary text-white"><h2>Facts At a Glance</h2></CardHeader>
                         <CardBody>
                             <div className="">
-                                <dl className="row row-eq-height">
+                                <dl className="row">
                                     <dt className="col-6">Alma Matter</dt>
                                     <dd className="col-6">York University</dd>
                                     <dt className="col-6">Graduated</dt>
@@ -78,32 +72,24 @@ function About(props) {
                                     <dd className="col-6">5 September 2020</dd>
                                     <dt className="col-6">Programming Languages</dt>
                                     <dd className="col-6">3</dd>
-                                    
-                                    
                                 </dl>
                             </div>
                         </CardBody>
                     </Card>
                 </div>
-                </div>
-                <div className="row">
-                <div className="col-12">
-                    <Card>
-                        <CardBody className="bg-faded">
-                            <blockquote className="blockquote">
-                                <p className="mb-0"><i>Everybody...should learn how to program a computer, should learn a computer language, because it teaches you  how to think.</i></p>
-                                <footer className="blockquote-footer">Steve Jobs,
+                <Card>
+                    <CardBody className="bg-faded">
+                        <blockquote className="blockquote">
+                            <p className="mb-0"><i>Everybody...should learn how to program a computer, should learn a computer language, because it teaches you  how to think.</i></p>
+                            <footer className="blockquote-footer">Steve Jobs,
                                 <cite title="Source Title">The Lost Interview,
                                     Robert Cringely,PBS, 1995</cite>
-                                </footer>
-                            </blockquote>
-                        </CardBody>
-                    </Card>
-                </div>
+                            </footer>
+                        </blockquote>
+                    </CardBody>
+                </Card>
             </div>
         </div>
-
-
     );
 }
 
