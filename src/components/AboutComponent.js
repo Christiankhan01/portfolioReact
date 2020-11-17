@@ -8,34 +8,36 @@ import { baseUrl } from '../shared/baseUrl';
 function About(props) {
     return (
         <div className="container">
-            <header class="jumbotron">
-                <div class="row">
-                    <div class="col-12 col-sm-12 col-md-12">
-                        <h1 class="text-center">About me</h1>
+            <header className="jumbotron">
+                <div className="row">
+                    <div className="col-12 col-sm-12 col-md-12">
+                        <h1 className="text-center">About me</h1>
                         <p>Hi, my name is Christian Khan. I am a Computer Programmer and fullstack web developer in Toronto, who can build web applications from scratch. I enjoy creating functional applications for the web, desktop or mobile. Working with ReactJS
                         within the MERN framework has become one of my hobbies as i explore the <i>"code once deploy
                             everywhere"</i> approach to web development.
                     </p>
                     </div>
                 </div>
-                <div class="row offset-1">
-                    <div class="col-12 col-sm-3 col-md-3">
-                        <img src={baseUrl + ("assets/logos/MongoLogo.png")} alt="NoSql MongoDB Logo" />
-                        <p>MongoDB</p>
+                <div className="row offset-1">
+
+                        <div className="col-12 col-sm-4 col-md-3">
+                            <img src={baseUrl + ("assets/logos/MongoLogo.png")} alt="NoSql MongoDB Logo" />
+                            <p>MongoDB</p>
+                        </div>
+                        <div className="  col-12 col-sm-3 col-md-3">
+                            <img src={baseUrl + ("assets/logos/expressLogo.png ")} alt="expressLogo" />
+                            <p>Express</p>
+                        </div>
+                        <div className="  col-12 col-sm-3 col-md-3">
+                            <img src={baseUrl + ("assets/logos/reactLogo.png")} alt="React " />
+                            <p> React</p>
+                        </div>
+                        <div className="  col-12 col-sm-3 col-md-3">
+                            <img src={baseUrl + ("assets/logos/nodeLogo.png")} alt="NoSql MongoDB Logo" />
+                            <p>NodeJS</p>
+                        </div>
                     </div>
-                    <div class="  col-12 col-sm-3 col-md-3">
-                        <img src={baseUrl + ("assets/logos/expressLogo.png ")} alt="expressLogo" />
-                        <p>Express</p>
-                    </div>
-                    <div class="  col-12 col-sm-3 col-md-3">
-                        <img src={baseUrl + ("assets/logos/reactLogo.png")} alt="React " />
-                        <p> React</p>
-                    </div>
-                    <div class="  col-12 col-sm-3 col-md-3">
-                        <img src={baseUrl + ("assets/logos/nodeLogo.png")} alt="NoSql MongoDB Logo" />
-                        <p>NodeJS</p>
-                    </div>
-                </div>
+
             </header>
             <div className="row">
                 <Breadcrumb>

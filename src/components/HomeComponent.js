@@ -2,7 +2,8 @@ import React from 'react';
 import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
 import { Loading } from './LoadingComponent';
 import { baseUrl } from '../shared/baseUrl';
-import { FadeTransform } from 'react-animation-components';
+import { FadeTransform, Fade } from 'react-animation-components';
+import Image from 'react-bootstrap/Image';
 
 
 
@@ -45,10 +46,13 @@ function Home(props) {
 
         <div className="container">
             <div className="row">
+
                 <RenderCard item={props.project}
                     isLoading={props.projectsLoading}
                     errMess={props.projectsErrMess}
-                     />
+                     /> 
+            
+            
             </div>
         </div>
 

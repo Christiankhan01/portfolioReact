@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import { Breadcrumb, BreadcrumbItem, Button, Label, Col, Row } from 'reactstrap';
 import { Control, Form, Errors } from 'react-redux-form';
+import Image from 'react-bootstrap/Image';
+import { baseUrl } from '../shared/baseUrl';
 import { Link } from 'react-router-dom';
 
-const required = (val) => val && val.length; 
-const maxLength = (len) => (val) => !(val) || (val.length <= len); 
-const minLength = (len) => (val) => (val) && (val.length >= len); 
-const isNumber = (val) => !isNaN(Number(val)); 
-const validEmail = (val) => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val); 
+const required = (val) => val && val.length;
+const maxLength = (len) => (val) => !(val) || (val.length <= len);
+const minLength = (len) => (val) => (val) && (val.length >= len);
+const isNumber = (val) => !isNaN(Number(val));
+const validEmail = (val) => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val);
 
 class Contact extends Component {
     constructor(props) {
@@ -19,9 +21,9 @@ class Contact extends Component {
 
 
     handleSubmit(values) {
-        console.log("Current state is: " + JSON.stringify(values)); 
-        alert("Current state is: " + JSON.stringify(values)); 
-        this.props.resetFeedbackForm(); 
+        console.log("Current state is: " + JSON.stringify(values));
+        alert("Current state is: " + JSON.stringify(values));
+        this.props.resetFeedbackForm();
 
     }
 
@@ -29,17 +31,24 @@ class Contact extends Component {
         return (
             <body className="body-color">
                 <div className="container">
-                <header class="jumbotron">
-                <div class="row row-header">
-                    <div class="text-center col-12 col-sm-12 col-md-12">
-                        <h1 class="text-center">About me</h1>
-                        <p>Have great idea for an app or website? Feel free to contact me!
-                    </p>
-                    </div>
-                </div>
-                <div class="row offset-1">
-                </div>
-            </header>
+                    <header class="jumbotron">
+                        <div class="row row-header">
+                            <div class="text-center col-12 col-sm-12 col-md-12">
+                                <h1 class="text-center">Contact Me</h1>
+                                <h5>Have great idea for an app or website? Let's put some code to it and mkae it a reality!</h5>
+                                <div className="row">
+                                    <div className=" col-12 col-sm-6 col-md-6">
+                                        <Image src={baseUrl + ("assets/logos/idea.png")} fluid alt="Idea image" />
+                                    </div>
+                                    <div className="col-12 col-sm-6 col-md-6">
+                                        <Image src={baseUrl + ("assets/logos/Responsive.png")} fluid alt="Idea image" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row offset-1">
+                        </div>
+                    </header>
                     <div className="row">
                         <Breadcrumb className="text-color">
                             <BreadcrumbItem><Link to='/home'>Home</Link></BreadcrumbItem>
@@ -84,19 +93,19 @@ class Contact extends Component {
                                             placeholder="First Name"
                                             className="form-control"
                                             validators={{
-                                                required, minLength: minLength(3), maxLength: maxLength(15) 
+                                                required, minLength: minLength(3), maxLength: maxLength(15)
                                             }}
                                         />
-                                        <Errors 
+                                        <Errors
                                             className="text-danger"
                                             model=".firstName"
                                             show="touched"
                                             messages={{
-                                                required: 'Required', 
-                                                minLength: 'Must be greater than 2 characters', 
+                                                required: 'Required',
+                                                minLength: 'Must be greater than 2 characters',
                                                 maxLength: 'Must be 15 characters or less'
                                             }}
-                                            />
+                                        />
 
                                     </Col>
                                 </Row>
@@ -107,18 +116,18 @@ class Contact extends Component {
                                             placeholder="Last Name"
                                             className="form-control"
                                             validators={{
-                                                required, minLength: minLength(3), maxLength: maxLength(15) 
+                                                required, minLength: minLength(3), maxLength: maxLength(15)
                                             }}
                                         />
-                                        <Errors 
-                                        className="text-danger"
-                                        model=".lastName"
-                                        show="touched"
-                                        messages={{
-                                            required: 'Required', 
-                                            minLength: 'Must be greater than 2 characters', 
-                                            maxLength: 'Must be 15 characters or less'
-                                        }}
+                                        <Errors
+                                            className="text-danger"
+                                            model=".lastName"
+                                            show="touched"
+                                            messages={{
+                                                required: 'Required',
+                                                minLength: 'Must be greater than 2 characters',
+                                                maxLength: 'Must be 15 characters or less'
+                                            }}
                                         />
 
                                     </Col>
@@ -133,16 +142,16 @@ class Contact extends Component {
                                                 required, minLength: minLength(3), maxLength: maxLength(15), isNumber
                                             }}
                                         />
-                                        <Errors 
-                                        className="text-danger"
-                                        model=".telNum"
-                                        show="touched"
-                                        messages={{
-                                            required: 'Required', 
-                                            minLength: 'Must be greater than 2 characters', 
-                                            maxLength: 'Must be 15 characters or less', 
-                                            isNumber: 'Must be a number'
-                                        }}
+                                        <Errors
+                                            className="text-danger"
+                                            model=".telNum"
+                                            show="touched"
+                                            messages={{
+                                                required: 'Required',
+                                                minLength: 'Must be greater than 2 characters',
+                                                maxLength: 'Must be 15 characters or less',
+                                                isNumber: 'Must be a number'
+                                            }}
                                         />
 
                                     </Col>
@@ -156,16 +165,16 @@ class Contact extends Component {
                                             validators={{
                                                 required, validEmail
                                             }}
-                                            />
-                                            <Errors 
+                                        />
+                                        <Errors
                                             className="text-danger"
                                             model=".email"
                                             show="touched"
                                             messages={{
-                                                required: 'Required', 
+                                                required: 'Required',
                                                 validEmail: 'Invalid Email Address'
                                             }}
-                                            />
+                                        />
                                     </Col>
                                 </Row>
                                 <Row classname="form-group">
@@ -173,8 +182,8 @@ class Contact extends Component {
                                         <div className="form-check">
                                             <Label check>
                                                 <Control.checkbox model=".agree" name="agree"
-                                                    className="form-checkbox-input"/> 
-                                                    {' '}
+                                                    className="form-checkbox-input" />
+                                                {' '}
                                                 <strong className='text-color'>May we contact you?</strong>
                                             </Label>
                                         </div>
