@@ -1,5 +1,5 @@
 import React from 'react';
-import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader } from 'reactstrap';
+import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardDeck, CardHeader } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { baseUrl } from '../shared/baseUrl';
 
@@ -50,7 +50,7 @@ function About(props) {
                 </div>
             </div>
             <div className="row">
-                <div className="card-deck">
+                <CardDeck>
                     <Card>
                         <CardHeader className="bg-primary text-white">
                             <h2>My History</h2>
@@ -78,7 +78,7 @@ function About(props) {
                             </div>
                         </CardBody>
                     </Card>
-                </div>
+                </CardDeck>
                 <Card>
                     <CardBody className="bg-faded">
                         <blockquote className="blockquote">

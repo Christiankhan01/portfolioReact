@@ -1,10 +1,9 @@
 import React from 'react';
-import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
+import { Card, CardImg, CardText, CardBody, CardTitle, CardDeck, CardHeader } from 'reactstrap';
 import { Loading } from './LoadingComponent';
 import { baseUrl } from '../shared/baseUrl';
 import { FadeTransform, Fade } from 'react-animation-components';
 import Image from 'react-bootstrap/Image';
-
 
 
 function RenderCard({ item, isLoading, errMess }) {
@@ -22,17 +21,26 @@ function RenderCard({ item, isLoading, errMess }) {
         return (
             <div className="container">
                 <FadeTransform in
-                    transformProps={{
-                        exitTransform: 'scale(0.5) translateY(-50%)'
-                    }}>
+                    transformProps={{ exitTransform: 'scale(0.5) translateY(-50%)' }}>
                     <div className="row justify-content-center">
-                        <Card>
-                            <CardImg src={baseUrl + item.image} alt={item.name} />
-                            <CardBody>
-                                <CardTitle>{item.name}</CardTitle>
-                                <CardText>{item.description}</CardText>
-                            </CardBody>
-                        </Card>
+                        <div className="col-12 col-sm-7 col-md-7 ">
+                            <CardDeck>
+                                <Card>
+                                    <CardBody >
+                                        <div className="text-center">
+                                            <CardImg src={baseUrl + item.image} alt="" />
+                                            <CardTitle className="bg-primary text-white">{item.name}</CardTitle>
+                                            <img src={baseUrl + item.image2} fluid alt="" />
+                                            <img src={baseUrl + item.image3} alt="" />
+                                            <CardText>{item.shortDescription}</CardText>
+                                            <CardText>{item.label}</CardText>
+                                            <a href={item.link}>{item.word}</a>
+                                        </div>
+                                    </CardBody>
+                                </Card>
+                            </CardDeck>
+
+                        </div>
                     </div>
                 </FadeTransform>
             </div >
@@ -43,19 +51,24 @@ function RenderCard({ item, isLoading, errMess }) {
 
 function Home(props) {
     return (
+        <div className="container">
+            <div className="container">
+                <header className="jumbotron jumbotron-fluid ">
+                    <div className="row">
+                        <div className="col-12 col-sm-6 col-md-6 fluid ">
+                            <h1>This doesn't make sesnes</h1>
+                            <h5>Welcome to my portfolio web application. This portoflio will demonstrate my skills in <font color="#007bff">Fullstack Web Development</font> using the MERN (Mongodb, ExpressJS, ReactJS and NodeJS) stack. Plese feel free to leave any feedback for me which can be found the in Contacts section of this application. Thank You and Happy Browsing!</h5>
+                        </div>
+                        <div className="align-self-center col-12 col-sm-6 col-md-6">
+                            <Image src={baseUrl + ("assets/logos/devLogo.png")} fluid alt="Developer Image" />
+                        </div>
+                    </div>
+                </header>
+            </div>
 
-        <div className="container ">
-            <header className="jumbotron ">
-                <div className="row row-header ">
-                    <div className="col-12 col-sm-6 col-md-6 ">
-                        <h1>FullStack Web Developer</h1>
-                        <h5>Welcome to my portfolio web application. This portoflio will demonstrate my skills in <font color="#007bff">Fullstack Web Development</font> using the MERN (Mongodb, ExpressJS, ReactJS and NodeJS) stack. Plese feel free to leave any feedback for me which can be found the in Contacts section of this application. Thank You and Happy Browsing!</h5>
-                    </div>
-                    <div className="align-self-center col-12 col-sm-6 col-md-6">
-                        <Image src={baseUrl + ("assets/logos/devLogo.png")} fluid alt="Developer Image" />
-                    </div>
-                </div>
-            </header>
+
+
+
             <div className="container">
                 <h2 className="text-center text-color">My Skills</h2>
                 <div className="row  ">
@@ -82,6 +95,10 @@ function Home(props) {
                                 <li>
                                     <img src={baseUrl + ("./assets/logos/reactLogo.png")} alt="React " />
                                     <span> React</span>
+                                </li>
+                                <li>
+                                    <img src={baseUrl + ("./assets/logos/nodeLogo.png")} alt="React " />
+                                    <span> NodeJS</span>
                                 </li>
                                 <li>
                                     <img src={baseUrl + ("./assets/logos/expressLogo.png ")} alt="expressLogo" />
@@ -148,14 +165,22 @@ function Home(props) {
                     </div>
                 </div>
             </div>
-
-            <RenderCard item={props.project}
-                isLoading={props.projectsLoading}
-                errMess={props.projectsErrMess}
-            />
-
+            <h2 class="text-center text-color">Some Featured Works</h2>
+            <div className="row">
+                <div className="col-12 col-sm col-md-6">
+                    <RenderCard item={props.project}
+                        isLoading={props.projectsLoading}
+                        errMess={props.projectsErrMess} />
+                </div>
+                <div className="col-12 col-sm col-md-6">
+                    <RenderCard item={props.project1}
+                        isLoading={props.projectsLoading}
+                        errMess={props.projectsErrMess} />
+                </div>
+            </div>
 
         </div>
+
 
     );
 }

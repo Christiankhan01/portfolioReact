@@ -3,10 +3,11 @@
 }
 
 .jumbotron {
-    padding: 50px 10px 50px 10px;
+    padding: 70px 30px 70px 30px;
     margin: 0px auto;
     background-color: #141414;
     color: floralwhite;
+    width: 100%
 }
 
 .font-color {

@@ -66,7 +66,7 @@ class ProjectsMenu extends Component {
                                     exitTransform: 'scale(0.5) translateY(-50%)'
                                 }}>
                                 <CardImg width='100%' src={baseUrl + project.image} alt={project.name} />
-                                <CardTitle>{project.name}</CardTitle>
+                                <CardTitle className= "bg-primary text-white">{project.name}</CardTitle>
                                 <CardText>{project.category}</CardText>
                                 <a href={project.link}>{project.word}</a>
                             </FadeTransform>
