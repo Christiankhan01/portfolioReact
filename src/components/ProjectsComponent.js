@@ -95,7 +95,7 @@ class ProjectsMenu extends Component {
         }
         else
             return (
-                <div className="container" >
+                <div className="container-fluid" >
                     <header className="jumbotron">
                         <div className="row row-header">
                             <div className="text-center col-12 col-sm-12 col-md-12">
@@ -105,7 +105,7 @@ class ProjectsMenu extends Component {
                         </div>
                         <div className="row">
                             <div className="col-12 col-sm col-md  ">
-                                <Image className="center-block" src={baseUrl + ("assets/logos/projects.png")} fluid alt="Developer Image" />
+                                <Image className="center-block" src={baseUrl + ("assets/logos/projects.png")} fluid="true" alt="Developer Image" />
                             </div>
                         </div>
                     </header>Projects

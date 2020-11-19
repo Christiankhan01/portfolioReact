@@ -1,33 +1,33 @@
 import React, { Component } from 'react';
 import { Navbar, NavbarBrand, Nav, NavbarToggler, Collapse, NavItem } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
-import { baseUrl } from '../shared/baseUrl'; 
+import { baseUrl } from '../shared/baseUrl';
 
 
 class Header extends Component {
-    
+
     constructor(props) {
-        super(props); 
+        super(props);
         this.state = {
             isNavOpen: false
         };
-        this.toggleNav=this.toggleNav.bind(this);  
+        this.toggleNav = this.toggleNav.bind(this);
     }
-    
+
     toggleNav() {
         this.setState({
             isNavOpen: !this.state.isNavOpen
-        }); 
+        });
     }
 
     render() {
         return (
-            <>
+            <div>
                 <Navbar dark color="primary" expand="md">
                     <div className="container">
-                    <NavbarToggler onClick={this.toggleNav} />
+                        <NavbarToggler onClick={this.toggleNav} />
                         <NavbarBrand className="mr-auto" href="/">
-                            <img src={baseUrl + ("assets/logos/computeringLogo.png")}  alt="Christian Khan" />
+                            <img src={baseUrl + ("assets/logos/computeringLogo.png")} alt="Christian Khan" />
                         </NavbarBrand>
                         <Collapse isOpen={this.state.isNavOpen} navbar>
                             <Nav navbar>
@@ -55,7 +55,7 @@ class Header extends Component {
                         </Collapse>
                     </div>
                 </Navbar>
-            </>
+            </div>
 
         )
     }

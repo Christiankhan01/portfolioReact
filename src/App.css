@@ -7,7 +7,6 @@
     margin: 0px auto;
     background-color: #141414;
     color: floralwhite;
-    width: 100%
 }
 
 .font-color {
@@ -53,8 +52,8 @@ ul.no-bullets {
     color: floralwhite;
 }
 
-.nowrap {
-    white-space: nowrap;
+.wrap {
+    word-wrap: break-word;
 }
 
 .page-enter {
