@@ -10,7 +10,7 @@ function About() {
         <div className="container-fluid">
             <div className="jumbotron ">
                 <div className="row">
-                    <div className="col-12 col-sm-12 col-md-12">
+                    <div className="col-12 col-sm-12 col-md-8 offset-md-2 ">
                         <h1 className="text-center">About me</h1>
                         <p>Hi, my name is Christian Khan. I am a Computer Programmer and fullstack web developer in Toronto, who can build web applications from scratch. I enjoy creating functional applications for the web, desktop or mobile. Working with ReactJS
                         within the MERN framework has become one of my hobbies as i explore the <i>"code once deploy
@@ -19,8 +19,7 @@ function About() {
                     </div>
                 </div>
 
-                <div className="row offset-1">
-
+                <div className="row offset-2">
                     <div className="col-12 col-sm-4 col-md-3">
                         <img src={baseUrl + ("assets/logos/MongoLogo.png")} alt="NoSql MongoDB Logo" />
                         <p>MongoDB</p>

@@ -9,6 +9,11 @@
     color: floralwhite;
 }
 
+.jumbotron-fluid {
+    background-color: #141414;
+    padding: 70px 30px 70px 30px;
+}
+
 .font-color {
     color: floralwhite;
 }
@@ -29,6 +34,10 @@
     padding: 50px 0px 50px 0px;
     border-bottom: 1px ridge;
     min-height: 400px;
+}
+
+.row-end {
+    border-bottom: 1px ridge;
 }
 
 .footer {

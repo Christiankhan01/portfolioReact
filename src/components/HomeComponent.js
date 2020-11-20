@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardImg, CardText, CardBody, CardTitle, CardDeck, CardHeader } from 'reactstrap';
+import { Card, CardImg, CardText, CardBody, CardTitle, CardDeck } from 'reactstrap';
 import { Loading } from './LoadingComponent';
 import { baseUrl } from '../shared/baseUrl';
 import { FadeTransform, Fade } from 'react-animation-components';
@@ -19,44 +19,48 @@ function RenderCard({ item, isLoading, errMess }) {
     }
     else
         return (
-                <FadeTransform in
-                    transformProps={{ exitTransform: 'scale(0.5) translateY(-50%)' }}>
+            <FadeTransform in
+                transformProps={{ exitTransform: 'scale(0.5) translateY(-50%)' }}>
+                <div className="container-fluid">
                     <div className="row justify-content-center">
-                        <div className="col-12 col-sm-7 col-md-7 ">
-                            <CardDeck>
-                                <Card>
-                                    <CardBody >
-                                        <div className="text-center">
-                                            <CardImg src={baseUrl + item.image} alt="" />
-                                            <CardTitle className="bg-primary text-white">{item.name}</CardTitle>
-                                            <img src={baseUrl + item.image2} fluid alt="" />
-                                            <img src={baseUrl + item.image3} alt="" />
-                                            <CardText>{item.shortDescription}</CardText>
-                                            <CardText>{item.label}</CardText>
-                                            <a href={item.link}>{item.word}</a>
-                                        </div>
-                                    </CardBody>
-                                </Card>
-                            </CardDeck>
+                        <div className="col-12 col-md-5    ">
+                            <Card>
+                                <CardBody >
+                                    <div className="text-center" >
+                                        <CardImg src={baseUrl + item.image} fluid alt="" />
+                                        <CardTitle className="bg-primary text-white">{item.name}</CardTitle>
+                                        <img src={baseUrl + item.image2} alt="" />
+                                        <img src={baseUrl + item.image3} alt="" />
+                                        <CardText>{item.shortDescription}</CardText>
+                                        <CardText>{item.label}</CardText>
+                                        <a href={item.link}>{item.word}</a>
+                                    </div>
+                                </CardBody>
+                            </Card>
+
                         </div>
                     </div>
-                </FadeTransform>
+                </div>
+            </FadeTransform>
         );
 }
 
 function Home(props) {
     return (
         <div className="container-fluid">
-            <div className="jumbotron ">
+            <div className="jumbotron">
                 <div className="row">
-                    <div className="col-12 col-sm-12 col-md-6">
+   
+                <div className="col-12 col-sm-12 col-md-4 offset-2">
                         <h1>This doesn't make sesnes</h1>
-                        <h5>Welcome to my portfolio web application. This portoflio will demonstrate my skills in <font color="#007bff">Fullstack Web Development</font> using the MERN (Mongodb, ExpressJS, ReactJS and NodeJS) stack. Plese feel free to leave any feedback for me which can be found the in Contacts section of this application. Thank You and Happy Browsing!</h5>
+                        <h4>Welcome to my portfolio web application. This portoflio will demonstrate my skills in <font color="#007bff">Fullstack Web Development</font> using the MERN (Mongodb, ExpressJS, ReactJS and NodeJS) stack. Plese feel free to leave any feedback for me which can be found the in Contacts section of this application. Thank You and Happy Browsing!</h4>
                     </div>
-                    <div className="align-self-center col-12 col-sm-6">
+                    <div className=" col-12 col-sm-6 col-md-4 offset-2">
                         <Image src={baseUrl + ("assets/logos/devLogo.png")} fluid="true" alt="Developer Image" />
                     </div>
-                </div>
+
+                    </div>
+
             </div>
 
 
@@ -64,9 +68,11 @@ function Home(props) {
                 <div className="col-12 col-sm-12 col-md-12 col-lg-12">
                     <h2 className="text-center text-color">My Skills</h2>
                 </div>
-                <div className=" row-content">
-                    <div className="row ">
-                        <div className=" col-12 col-md-4 col-lg-4">
+                <div className="row-content">
+                    <div className="row">
+
+
+                        <div className=" col-12 col-sm-4 col-md-4">
                             <h5 className="text-center text-color"> FullStack Web Development</h5>
                             <Fade in>
                                 <ul className="no-bullets text-color">
@@ -107,10 +113,10 @@ function Home(props) {
                         </div>
 
 
-                        <div class="col-12 col-md-4 col-lg-4">
-                            <h5 class="text-center text-color"> Database Administration </h5>
+                        <div className="col-12 col-md-4">
+                            <h5 className="text-center text-color"> Database Administration </h5>
                             <Fade in>
-                                <ul class="no-bullets text-color">
+                                <ul className="no-bullets text-color">
                                     <li>
                                         <img src={baseUrl + ("./assets/logos/javaLogo.png")} alt="JDBC Logo" />
                                         <span>JDBC</span>
@@ -138,10 +144,10 @@ function Home(props) {
                                 </ul>
                             </Fade>
                         </div>
-                        <div class="col-12 col-md-4 col-lg-4">
-                            <h5 class="text-center text-color"> Application Development </h5>
+                        <div className="col-12 col-md-4 col-lg-4">
+                            <h5 className="text-center text-color"> Application Development </h5>
                             <Fade in enterOpacity={0.95}>
-                                <ul class="no-bullets text-color">
+                                <ul className="no-bullets text-color">
                                     <li>
                                         <img src={baseUrl + ("./assets/logos/reactLogo.png")} alt="React Logo" />
                                         <span>React Native</span>
@@ -160,7 +166,8 @@ function Home(props) {
                     </div>
                 </div>
             </div>
-            <h2 class="text-center text-color">Some Featured Works</h2>
+
+            <h2 className="text-center text-color">Some Featured Works</h2>
             <div className="row">
                 <div className="col-12 col-sm col-md-6">
                     <RenderCard item={props.project}
@@ -173,6 +180,7 @@ function Home(props) {
                         errMess={props.projectsErrMess} />
                 </div>
             </div>
+
         </div>
     );
 }

@@ -35,18 +35,11 @@ class Main extends Component {
   render() {
     const HomePage = () => {
       return (
-        <div className="container">
-          <div className="row justify-content-center m-1 d-flex">
-            <div className="col-12 col-sm col-md">
-              <Home project={this.props.projects.projects.filter((project) => project.featured)[0]}
-                project1={this.props.projects.projects.filter((project1) => project1.featured)[1]}
-                projectsLoading={this.props.projects.isLoading}
-                projectsErrMess={this.props.projects.errMess}
-              />
-            </div>
-          </div>
-        </div>
-
+        <Home project={this.props.projects.projects.filter((project) => project.featured)[0]}
+          project1={this.props.projects.projects.filter((project1) => project1.featured)[1]}
+          projectsLoading={this.props.projects.isLoading}
+          projectsErrMess={this.props.projects.errMess}
+        />
       );
     }
     return (

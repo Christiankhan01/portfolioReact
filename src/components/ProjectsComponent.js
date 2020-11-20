@@ -58,7 +58,7 @@ class ProjectsMenu extends Component {
     render() {
         const projectsMenu = this.props.projects.projects.map((project) => {
             return (
-                <div key={project.id} className="col-12 col-sm col-md m-1 d-flex">
+                <div key={project.id} className="justify-content-center col-12 col-sm-12 col-md-3 d-flex  ">
 
                         <Card className="text-center" onClick={() => this.onProjectSelect(project)}>
                             <FadeTransform in
@@ -98,7 +98,7 @@ class ProjectsMenu extends Component {
                 <div className="container-fluid" >
                     <header className="jumbotron">
                         <div className="row row-header">
-                            <div className="text-center col-12 col-sm-12 col-md-12">
+                            <div className="text-center col-12 col-sm-12 col-md-8 offset-2">
                                 <h1>Projects</h1>
                                 <h5>Welcome to the projects sections of my portfolio. Weather small widgets with less than 100 lines of code, or larger applications with 300 + lines of code, here you will find a variety of applications.  </h5>
                             </div>
