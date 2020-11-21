@@ -1,7 +1,9 @@
 import React from 'react';
-import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardDeck, CardHeader } from 'reactstrap';
+import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardDeck, CardHeader, ListGroup, ListGroupItem } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { baseUrl } from '../shared/baseUrl';
+
+
 
 
 
@@ -25,6 +27,8 @@ function About() {
                         <p>MongoDB</p>
                     </div>
                     <div className="  col-12 col-sm-3 col-md-3">
+
+
                         <img src={baseUrl + ("assets/logos/expressLogo.png ")} alt="expressLogo" />
                         <p>Express</p>
                     </div>
@@ -93,7 +97,50 @@ function About() {
                     </Card>
                 </div>
             </div>
-        </div >
+            <div className="row row-content">
+                <div className="col-sm-12 col-md-8 offset-md-2">
+                    <CardDeck>
+                        <Card>
+                        
+                            <CardHeader className="bg-primary text-white">
+
+                            <h3>Education Courses</h3></CardHeader>
+                            <ListGroup >
+                                <ListGroupItem>Web Technologies</ListGroupItem>
+                                <ListGroupItem>Systems Architecture</ListGroupItem>
+                                <ListGroupItem>System Administration</ListGroupItem>
+                                <ListGroupItem>Designing User Interfaces</ListGroupItem>
+                                <ListGroupItem>Introduction to Sets and Logic</ListGroupItem>
+                                <ListGroupItem>Object-Oriented Programming</ListGroupItem>
+                                <ListGroupItem>Introduction to Applied Statistics</ListGroupItem>
+                                <ListGroupItem>Introduction to Analytical Programming</ListGroupItem>
+                                <ListGroupItem>Using and Designing Database Systems</ListGroupItem>
+                                <ListGroupItem>Applied Data Communications and Networks</ListGroupItem>
+                            </ListGroup>
+                        </Card>
+                        <Card>
+                            <CardHeader className="bg-primary text-white"><h3>Accomplishments</h3></CardHeader>
+                            <ListGroup>
+                                <ListGroupItem></ListGroupItem>
+                                <ListGroupItem></ListGroupItem>
+                                <ListGroupItem>Front-End Web UI Frameworks and Tools: Bootstrap 4</ListGroupItem>
+                                <ListGroupItem></ListGroupItem>
+                                <ListGroupItem></ListGroupItem>
+                                <ListGroupItem>Front-End Web Development with React</ListGroupItem>
+                                <ListGroupItem></ListGroupItem>
+                                <ListGroupItem></ListGroupItem>
+                                <ListGroupItem>Multiplatform Mobile App Development with React Native</ListGroupItem>
+                                <ListGroupItem></ListGroupItem>
+                                <ListGroupItem></ListGroupItem>
+                                <ListGroupItem>Server-side Development with NodeJS, Express and MongoDB</ListGroupItem>
+                            </ListGroup>
+                        </Card>
+                    </CardDeck>
+                </div>
+            </div>
+
+        </div>
+
     );
 }
 

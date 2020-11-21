@@ -72,26 +72,45 @@ class Contact extends Component {
                                 </div>
                             </div>
                             <div className="col-12 col-sm-11 offset-sm-1">
-                                {/*                    <div className="btn-group" role="group">
-            <a role="button" className="btn btn-primary" href="tel:+85212345678"><i className="fa fa-phone"></i> Call</a>
-            <a role="button" className="btn btn-info"><i className="fa fa-skype"></i> Skype</a>
-            <a role="button" className="btn btn-success" href="mailto:confusion@food.net"><i className="fa fa-envelope-o"></i> Email</a>
-        </div> */}
+
                             </div>
                         </div>
-                    </div>
-                    <div className="row row-content">
-                        <div className="justify-content-center col-12 col-sm-12 col-md-8">
-                            <div className="col-12">
-                                <h3 className="text-center text-color">Send Your Feedback</h3>
-                            </div>
-                            <div className="col-12 col-md-8 offset-3">
-                                <Form model="feedback" onSubmit={(values) => this.handleSubmit(values)}>
-                                    <Row className="form-group">
-                                        <Label htmlFor="firstName" md={2} className="text-color">First Name</Label>
-                                        <Col md={10}>
-                                            <Control.text model=".firstName" id="firstName" name="firstName"
-                                                placeholder="First Name"
+                        </div>
+                        <div className="row row-content">
+                            <div className="col-12 col-sm-12 col-md-6 offset-3">
+                                <div className="justify-content-center">
+                                    <div className="col-12">
+                                        <h3 className="text-center text-color">Send Your Feedback</h3>
+                                    </div>
+                                    <Form model="feedback" onSubmit={(values) => this.handleSubmit(values)}>
+                                        <Row className="form-group">
+                                            <Label htmlFor="firstName" md={2} className="text-color">First Name</Label>
+                                            <Col md={8}>
+                                                <Control.text model=".firstName" id="firstName" name="firstName"
+                                                    placeholder="First Name"
+                                                    className="form-control"
+                                                    validators={{
+                                                        required, minLength: minLength(3), maxLength: maxLength(15)
+                                                    }}
+                                                />
+                                                <Errors
+                                                    className="text-danger"
+                                                    model=".firstName"
+                                                    show="touched"
+                                                    messages={{
+                                                        required: 'Required',
+                                                        minLength: 'Must be greater than 2 characters',
+                                                        maxLength: 'Must be 15 characters or less'
+                                                    }}
+                                                />
+
+                                            </Col>
+                                        </Row>
+                                        <Row className="form-group">
+                                        <Label htmlFor="lastName" md={2} className="text-color">Last Name</Label>
+                                        <Col md={8}>
+                                            <Control.text model=".lastName" id="lastName" name="lastName"
+                                                placeholder="Last Name"
                                                 className="form-control"
                                                 validators={{
                                                     required, minLength: minLength(3), maxLength: maxLength(15)
@@ -110,116 +129,99 @@ class Contact extends Component {
 
                                         </Col>
                                     </Row>
-                                    <Row classname="form-group">
-                                        <Label htmlFor="lastName" md={2} className="text-color">Last Name</Label>
-                                        <Col md={10}>
-                                            <Control.text model=".lastName" id="lastName" name="lastName"
-                                                placeholder="Last Name"
-                                                className="form-control"
-                                                validators={{
-                                                    required, minLength: minLength(3), maxLength: maxLength(15)
-                                                }}
-                                            />
-                                            <Errors
-                                                className="text-danger"
-                                                model=".lastName"
-                                                show="touched"
-                                                messages={{
-                                                    required: 'Required',
-                                                    minLength: 'Must be greater than 2 characters',
-                                                    maxLength: 'Must be 15 characters or less'
-                                                }}
-                                            />
+                                        <Row className="form-group">
+                                            <Label htmlFor="telNum" md={2} className="text-color">Contact Tel.</Label>
+                                            <Col md={8}>
+                                                <Control.text model=".telNum" id="telNum" name="telNum"
+                                                    placeholder="Tel. Number"
+                                                    className="form-control"
+                                                    validators={{
+                                                        required, minLength: minLength(3), maxLength: maxLength(15), isNumber
+                                                    }}
+                                                />
+                                                <Errors
+                                                    className="text-danger"
+                                                    model=".telNum"
+                                                    show="touched"
+                                                    messages={{
+                                                        required: 'Required',
+                                                        minLength: 'Must be greater than 2 characters',
+                                                        maxLength: 'Must be 15 characters or less',
+                                                        isNumber: 'Must be a number'
+                                                    }}
+                                                />
 
-                                        </Col>
-                                    </Row>
-                                    <Row classname="form-group">
-                                        <Label htmlFor="telNum" md={2} className="text-color">Contact Tel.</Label>
-                                        <Col md={10}>
-                                            <Control.text model=".telNum" id="telNum" name="telNum"
-                                                placeholder="Tel. Number"
-                                                className="form-control"
-                                                validators={{
-                                                    required, minLength: minLength(3), maxLength: maxLength(15), isNumber
-                                                }}
-                                            />
-                                            <Errors
-                                                className="text-danger"
-                                                model=".telNum"
-                                                show="touched"
-                                                messages={{
-                                                    required: 'Required',
-                                                    minLength: 'Must be greater than 2 characters',
-                                                    maxLength: 'Must be 15 characters or less',
-                                                    isNumber: 'Must be a number'
-                                                }}
-                                            />
-
-                                        </Col>
-                                    </Row>
-                                    <Row classname="form-group">
-                                        <Label htmlFor="email" md={2} className="text-color" >Email</Label>
-                                        <Col md={10}>
-                                            <Control.text model=".email" id="email" name="email"
-                                                placeholder="Email"
-                                                className="form-control"
-                                                validators={{
-                                                    required, validEmail
-                                                }}
-                                            />
-                                            <Errors
-                                                className="text-danger"
-                                                model=".email"
-                                                show="touched"
-                                                messages={{
-                                                    required: 'Required',
-                                                    validEmail: 'Invalid Email Address'
-                                                }}
-                                            />
-                                        </Col>
-                                    </Row>
-                                    <Row classname="form-group">
-                                        <Col md={{ size: 6, offset: 2 }}>
-                                            <div className="form-check">
-                                                <Label check>
-                                                    <Control.checkbox model=".agree" name="agree"
-                                                        className="form-checkbox-input" />
-                                                    {' '}
-                                                    <strong className='text-color'>May we contact you?</strong>
-                                                </Label>
-                                            </div>
-                                        </Col>
-                                        <Col md={{ size: 3, offset: 1 }}>
-                                            <Control.select model=".contactType" name="contactType"
-                                                className="form-control">
-                                                <option>Tel.</option>
-                                                <option>Email</option>
-                                            </Control.select>
-                                        </Col>
-                                    </Row>
-                                    <Row classname="form-group">
-                                        <Label htmlFor="message" md={2} className="text-color" >Your Feedback</Label>
-                                        <Col md={10}>
-                                            <Control.textarea model=".message" id="message" name="message"
-                                                rows="12"
-                                                className="form-control" />
-                                        </Col>
-                                    </Row>
-                                    <Row classname="form-group">
-                                        <Col md={{ size: 10, offset: 2 }}>
-                                            <Button type="submit" color="primary">
-                                                Send Feedback
+                                            </Col>
+                                        </Row>
+                                        <Row classname="form-group">
+                                            <Label htmlFor="email" md={2} className="text-color" >Email</Label>
+                                            <Col md={8}>
+                                                <Control.text model=".email" id="email" name="email"
+                                                    placeholder="Email"
+                                                    className="form-control"
+                                                    validators={{
+                                                        required, validEmail
+                                                    }}
+                                                />
+                                                <Errors
+                                                    className="text-danger"
+                                                    model=".email"
+                                                    show="touched"
+                                                    messages={{
+                                                        required: 'Required',
+                                                        validEmail: 'Invalid Email Address'
+                                                    }}
+                                                />
+                                            </Col>
+                                        </Row>
+                                        <Row classname="form-group">
+                                            <Col md={{ size: 4, offset: 2 }}>
+                                                <div className="form-check">
+                                                    <Label check>
+                                                        <Control.checkbox model=".agree" name="agree"
+                                                            className="form-checkbox-input" />
+                                                        {' '}
+                                                        <strong className='text-color'>May we contact you?</strong>
+                                                    </Label>
+                                                </div>
+                                            </Col>
+                                            <Col md={{ size: 3, offset: 1 }}>
+                                                <Control.select model=".contactType" name="contactType"
+                                                    className="form-control">
+                                                    <option>Tel.</option>
+                                                    <option>Email</option>
+                                                </Control.select>
+                                            </Col>
+                                        </Row>
+                                        <Row classname="form-group">
+                                            <Label htmlFor="message" md={2} className="text-color" >Your Feedback</Label>
+                                            <Col md={8}>
+                                                <Control.textarea model=".message" id="message" name="message"
+                                                    rows="12"
+                                                    className="form-control" />
+                                            </Col>
+                                        </Row>
+                                        <Row classname="form-group">
+                                            <Col md={{ size: 10, offset: 2 }}>
+                                                <Button type="submit" color="primary">
+                                                    Send Feedback
                                         </Button>
-                                        </Col>
-                                    </Row>
-                                </Form>
+                                            </Col>
+                                        </Row>
+                                    </Form>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+
             </body>
         );
     }
 }
 
 export default Contact;
+{/*                    <div className="btn-group" role="group">
+            <a role="button" className="btn btn-primary" href="tel:+85212345678"><i className="fa fa-phone"></i> Call</a>
+            <a role="button" className="btn btn-info"><i className="fa fa-skype"></i> Skype</a>
+            <a role="button" className="btn btn-success" href="mailto:confusion@food.net"><i className="fa fa-envelope-o"></i> Email</a>
+        </div> */}

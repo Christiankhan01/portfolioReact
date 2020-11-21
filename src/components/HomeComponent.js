@@ -48,20 +48,22 @@ function RenderCard({ item, isLoading, errMess }) {
 function Home(props) {
     return (
         <div className="container-fluid">
+
             <div className="jumbotron">
                 <div className="row">
-   
-                <div className="col-12 col-sm-12 col-md-4 offset-2">
-                        <h1>This doesn't make sesnes</h1>
+
+                    <div className="col-12 col-sm-12 col-md-4 offset-2">
+                        <h1>FullStack Web Developer</h1>
                         <h4>Welcome to my portfolio web application. This portoflio will demonstrate my skills in <font color="#007bff">Fullstack Web Development</font> using the MERN (Mongodb, ExpressJS, ReactJS and NodeJS) stack. Plese feel free to leave any feedback for me which can be found the in Contacts section of this application. Thank You and Happy Browsing!</h4>
                     </div>
-                    <div className=" col-12 col-sm-6 col-md-4 offset-2">
+
+                    <div className=" col-12 col-sm-6 col-md-4 offset-1">
                         <Image src={baseUrl + ("assets/logos/devLogo.png")} fluid="true" alt="Developer Image" />
                     </div>
-
-                    </div>
+                </div>
 
             </div>
+
 
 
             <div className="row">
