@@ -2,6 +2,9 @@ import React from 'react';
 import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardDeck, CardHeader, ListGroup, ListGroupItem } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { baseUrl } from '../shared/baseUrl';
+import { FaUserGraduate, FaMedal, FaHistory, FaCheckSquare } from 'react-icons/fa';
+
+
 
 
 
@@ -58,14 +61,14 @@ function About() {
                     <CardDeck>
                         <Card>
                             <CardHeader className="bg-primary text-white">
-                                <h2>My History</h2>
+                                <h2>My History <FaHistory /></h2>
                             </CardHeader>
                             <CardBody>
                                 <p>A graduate of the Information Technology Program at York University, earning a BA, I have taken the extra steps to specialize in Fullstack Web Development with React by earning a Coursera Specialization as i believe it to be the future of web development. Along with the traditional LAMP stack, i also know the MERN stack and hope to grow my skills further through continuous learning. </p>
                             </CardBody>
                         </Card>
                         <Card>
-                            <CardHeader className="bg-primary text-white"><h2>Facts At a Glance</h2></CardHeader>
+                            <CardHeader className="bg-primary text-white"><h2>Facts At a Glance<FaCheckSquare /></h2></CardHeader>
                             <CardBody>
                                 <div className="">
                                     <dl className="row">
@@ -84,6 +87,7 @@ function About() {
                             </CardBody>
                         </Card>
                     </CardDeck>
+                    <hr />
                     <Card>
                         <CardBody className="bg-faded">
                             <blockquote className="blockquote">
@@ -97,14 +101,14 @@ function About() {
                     </Card>
                 </div>
             </div>
+
             <div className="row row-content">
                 <div className="col-sm-12 col-md-8 offset-md-2">
                     <CardDeck>
                         <Card>
-                        
                             <CardHeader className="bg-primary text-white">
-
-                            <h3>Education Courses</h3></CardHeader>
+                                <h3>Education Courses<FaUserGraduate /> </h3>
+                            </CardHeader>
                             <ListGroup >
                                 <ListGroupItem>Web Technologies</ListGroupItem>
                                 <ListGroupItem>Systems Architecture</ListGroupItem>
@@ -119,7 +123,7 @@ function About() {
                             </ListGroup>
                         </Card>
                         <Card>
-                            <CardHeader className="bg-primary text-white"><h3>Accomplishments</h3></CardHeader>
+                            <CardHeader className="bg-primary text-white"><h3>Accomplishments<FaMedal /></h3></CardHeader>
                             <ListGroup>
                                 <ListGroupItem></ListGroupItem>
                                 <ListGroupItem></ListGroupItem>

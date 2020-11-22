@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; 
 
-function Footer(props) {
+function Footer() {
     return (
         <div className="footer">
             <div className="container text-color">
@@ -9,10 +9,10 @@ function Footer(props) {
                     <div className=" col-4 offset-1 col-sm-2 col-md-3">
                         <h5>Links</h5>
                         <ul className="list-unstyled">
-                            <li><Link to="/home" class= "text-color"> Home</Link></li>
-                            <li><Link to="/about" class= "text-color">About</Link></li>
-                            <li><Link to="/projects" class= "text-color">Projects</Link></li>
-                            <li><Link to="/contact" class= "text-color">Contact</Link></li>
+                            <li><Link to="/home" className= "text-color"> Home</Link></li>
+                            <li><Link to="/about" className= "text-color">About</Link></li>
+                            <li><Link to="/projects" className= "text-color">Projects</Link></li>
+                            <li><Link to="/contact" className= "text-color">Contact</Link></li>
                         </ul>
                     </div>
 

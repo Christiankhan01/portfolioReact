@@ -16,6 +16,7 @@ src/myResume.pdf
 
 # misc
 .DS_Store
+src/components/README.md
 .env.local
 .env.development.local
 .env.test.local

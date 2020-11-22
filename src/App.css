@@ -18,6 +18,16 @@
     color: floralwhite;
 }
 
+.zoom {
+    /* Animation */
+    width: 200px;
+}
+
+.zoom:hover {
+    transform: scale(1.2);
+    /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
 .cardStyle {
     display: 'block';
     width: '30vw';
@@ -57,10 +67,6 @@ ul.no-bullets {
     padding: 0;
     margin: 0;
     text-align: center;
-}
-
-.navbar-dark {
-    background-color: #512DA8;
 }
 
 .text-color {
