@@ -1,9 +1,9 @@
 
 import React, { Component } from 'react';
-import { Card, CardImg, CardText, CardBody, CardTitle, Breadcrumb, BreadcrumbItem, CardDeck } from 'reactstrap';
+import { Card, CardImg, CardText, CardBody, CardTitle, Breadcrumb, Jumbotron, BreadcrumbItem, CardDeck } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { Loading } from './LoadingComponent';
-import Image from 'react-bootstrap/Image';
+
 import { baseUrl } from '../shared/baseUrl';
 import { FadeTransform } from 'react-animation-components';
 
@@ -105,19 +105,19 @@ class ProjectsMenu extends Component {
         else
             return (
                 <div className="container-fluid" >
-                    <header className="jumbotron">
+                    <Jumbotron>
                         <div className="row row-header">
                             <div className="text-center col-md-8 offset-2">
                                 <h1>Projects</h1>
-                                <h5>Welcome to the projects sections of my portfolio. Weather small widgets with less than 100 lines of code, or larger applications with 300 + lines of code, here you will find a variety of applications.  </h5>
+                                <p className="font-custom">Welcome to the projects sections of my portfolio. Weather small widgets with less than 100 lines of code, here you will find a variety of applications.  </p>
                             </div>
                         </div>
                         <div className="row">
                             <div className="col-12 col-sm col-md  ">
-                                <Image className="center-block" src={baseUrl + ("assets/logos/projects.png")} fluid alt="Developer Image" />
+                                <img className="center-block img-fluid" src={baseUrl + ("assets/logos/projects.png")}   alt="Developer" />
                             </div>
                         </div>
-                    </header>Projects
+                    </Jumbotron>Projects
                     <div className="body-color">
                         <div className="row">
                             <Breadcrumb className="text-color">

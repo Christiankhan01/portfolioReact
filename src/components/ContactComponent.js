@@ -1,18 +1,20 @@
 import React, { Component } from 'react';
 import { Breadcrumb, BreadcrumbItem, Button, Label, Col, Row } from 'reactstrap';
 import { Control, Form, Errors } from 'react-redux-form';
-import Image from 'react-bootstrap/Image';
 import { baseUrl } from '../shared/baseUrl';
 import { Link } from 'react-router-dom';
 import Map from './MapComponent';
 import { withGoogleMap, withScriptjs } from 'react-google-maps';
 
+const API_KEY = process.env.REACT_APP_GOOGLE_KEY; 
 const WrappedMap = withScriptjs(withGoogleMap(Map))
 const required = (val) => val && val.length;
 const maxLength = (len) => (val) => !(val) || (val.length <= len);
 const minLength = (len) => (val) => (val) && (val.length >= len);
 const isNumber = (val) => !isNaN(Number(val));
 const validEmail = (val) => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val);
+
+console.log(process.env.REACT_APP_GOOGLE_KEY); 
 
 class Contact extends Component {
     constructor(props) {
@@ -34,19 +36,19 @@ class Contact extends Component {
 
     render() {
         return (
-            <body className="body-color">
+            <div className="body-color">
                 <div className="container-fluid">
                     <header className="jumbotron">
                         <div className="row row-header">
                             <div className="text-center col-12 col-sm-12 col-md-12">
                                 <h1 className="text-center">Contact Me</h1>
-                                <h5>Have great idea for an app or website? Let's put some code to it and mkae it a reality!</h5>
+                                <p className="font-custom">Have great idea for an app or website? Let's put some code to it and make it a reality!</p>
                                 <div className="row">
                                     <div className=" col-12 col-sm-6 col-md-6">
-                                        <Image src={baseUrl + ("assets/logos/idea.png")} fluid alt="Idea image" />
+                                        <img src={baseUrl + ("assets/logos/idea.png")} alt="" />
                                     </div>
                                     <div className="col-12 col-sm-6 col-md-6">
-                                        <Image src={baseUrl + ("assets/logos/Responsive.png")} fluid alt="Idea image" />
+                                        <img src={baseUrl + ("assets/logos/Responsive.png")} alt="" />
                                     </div>
                                 </div>
                             </div>
@@ -79,13 +81,15 @@ class Contact extends Component {
                             </div>
                         </div>
 
-                        <div className="col-12 col-md-8  ">
-                            <div style={{ width: '42%', height: '25vh' }}>
-                                <WrappedMap googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places`}
+                        <div className="col-12 col-md-8">
+                            {/*<Grid item sm={12} style={{ position: 'relative', height: '50vh' }}/>*/}
+                            <div style={{ width: '42%', height: '24vh' }}>
+                                <WrappedMap googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${API_KEY}&v=3.exp&libraries=geometry,drawing,places`}
                                     loadingElement={<div style={{ height: `100%` }} />}
                                     containerElement={<div style={{ height: `600px` }} />}
                                     mapElement={<div style={{ height: `50%` }} />}
                                 />
+
                             </div>
                         </div>
 
@@ -93,7 +97,7 @@ class Contact extends Component {
 
 
                     <div className="row row-content">
-                        <div className="col col-md-6 offset-3">
+                        <div className="col-md-6 offset-3">
                             <h3 className="text-center text-color">Send Your Feedback</h3>
                             <Form model="feedback" onSubmit={(values) => this.handleSubmit(values)}>
                                 <Row className="form-group">
@@ -166,7 +170,7 @@ class Contact extends Component {
 
                                     </Col>
                                 </Row>
-                                <Row classname="form-group">
+                                <Row className="form-group">
                                     <Label htmlFor="email" md={2} className="text-color" >Email</Label>
                                     <Col md={7}>
                                         <Control.text model=".email" id="email" name="email"
@@ -187,7 +191,7 @@ class Contact extends Component {
                                         />
                                     </Col>
                                 </Row>
-                                <Row classname="form-group">
+                                <Row className="form-group">
                                     <Col md={{ size: 4, offset: 2 }}>
                                         <div className="form-check">
                                             <Label check>
@@ -206,7 +210,7 @@ class Contact extends Component {
                                         </Control.select>
                                     </Col>
                                 </Row>
-                                <Row classname="form-group">
+                                <Row className="form-group">
                                     <Label htmlFor="message" md={2} className="text-color" >Your Feedback</Label>
                                     <Col md={7}>
                                         <Control.textarea model=".message" id="message" name="message"
@@ -214,7 +218,7 @@ class Contact extends Component {
                                             className="form-control" />
                                     </Col>
                                 </Row>
-                                <Row classname="form-group">
+                                <Row className="form-group">
                                     <Col md={{ size: 10, offset: 2 }}>
                                         <Button type="submit" color="primary">
                                             Send Feedback
@@ -228,7 +232,7 @@ class Contact extends Component {
                 </div>
 
 
-            </body >
+            </div>
         );
     }
 }

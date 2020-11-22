@@ -43,7 +43,7 @@ class Main extends Component {
       );
     }
     return (
-      <body className="body-color">
+      <div className="body-color">
         <div>
           <Header />
           <TransitionGroup>
@@ -59,7 +59,7 @@ class Main extends Component {
           </TransitionGroup>
           <Footer />
         </div >
-      </body>
+      </div>
     );
   }
 }

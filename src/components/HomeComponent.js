@@ -1,15 +1,17 @@
 import React from 'react';
-import { Card, CardImg, CardText, CardBody, CardTitle, CardDeck } from 'reactstrap';
+import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
 import { Loading } from './LoadingComponent';
 import { baseUrl } from '../shared/baseUrl';
 import { FadeTransform, Fade } from 'react-animation-components';
-import Image from 'react-bootstrap/Image';
+
 
 
 function RenderCard({ item, isLoading, errMess }) {
     if (isLoading) {
         return (
-            <Loading />
+
+                <Loading />
+
         );
     }
     else if (errMess) {
@@ -27,7 +29,7 @@ function RenderCard({ item, isLoading, errMess }) {
                             <Card>
                                 <CardBody >
                                     <div className="text-center" >
-                                        <CardImg src={baseUrl + item.image} fluid alt="" />
+                                        <CardImg className="img-fluid" src={baseUrl + item.image} alt="" />
                                         <CardTitle className="bg-primary text-white">{item.name}</CardTitle>
                                         <img src={baseUrl + item.image2} alt="" />
                                         <img src={baseUrl + item.image3} alt="" />
@@ -52,10 +54,10 @@ function Home(props) {
                 <div className="row">
                     <div className="col-md-4 offset-2">
                         <h1>FullStack Web Developer</h1>
-                        <h4>Welcome to my portfolio web application. This portoflio will demonstrate my skills in <font color="#007bff">Fullstack Web Development</font> using the MERN (Mongodb, ExpressJS, ReactJS and NodeJS) stack. Plese feel free to leave any feedback for me which can be found the in Contacts section of this application. Thank You and Happy Browsing!</h4>
+                        <p className="font-custom">Welcome to my portfolio web application. This portoflio will demonstrate my skills in <font color="#007bff">Fullstack Web Development</font> using the MERN (Mongodb, ExpressJS, ReactJS and NodeJS) stack. Plese feel free to leave any feedback for me which can be found the in Contacts section of this application. Thank You and Happy Browsing!</p>
                     </div>
                     <div className=" col-12 col-sm-6 col-md-4 offset-1">
-                        <Image src={baseUrl + ("assets/logos/devLogo.png")} fluid alt="Developer Image" />
+                        <img className="img-fluid" src={baseUrl + ("assets/logos/devLogo.png")} alt="Developer" />
                     </div>
                 </div>
             </div>
