@@ -1,8 +1,9 @@
 import React from 'react';
-import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
+import { Card, CardImg, CardText, CardBody, CardTitle, Jumbotron } from 'reactstrap';
 import { Loading } from './LoadingComponent';
 import { baseUrl } from '../shared/baseUrl';
 import { FadeTransform, Fade } from 'react-animation-components';
+import Typing from 'react-typing-animation';
 
 
 
@@ -10,7 +11,7 @@ function RenderCard({ item, isLoading, errMess }) {
     if (isLoading) {
         return (
 
-                <Loading />
+            <Loading />
 
         );
     }
@@ -50,25 +51,32 @@ function RenderCard({ item, isLoading, errMess }) {
 function Home(props) {
     return (
         <div className="container-fluid">
-            <div className="jumbotron">
+            <Jumbotron>
                 <div className="row">
-                    <div className="col-md-4 offset-2">
+                    <div className="col-md-4 offset-2 alcenter">
+                    <Typing speed ={200}>
+                    <div>
+                        <Typing.Delay ms={1000} />
+                        <Typing.Speed ms ={100} />
                         <h1>FullStack Web Developer</h1>
-                        <p className="font-custom">Welcome to my portfolio web application. This portoflio will demonstrate my skills in <font color="#007bff">Fullstack Web Development</font> using the MERN (Mongodb, ExpressJS, ReactJS and NodeJS) stack. Plese feel free to leave any feedback for me which can be found the in Contacts section of this application. Thank You and Happy Browsing!</p>
+                    </div>
+                </Typing>
+                        <hr />
+                        <p className="font-s">Welcome to my portfolio web application demonstrating my skills in <font color="#25d79b">Computer Programming</font> & <font color="#007bff">Fullstack Web Development</font> using the MERN (Mongodb, ExpressJS, ReactJS and NodeJS) stack. Thank You and Happy Browsing!</p>
                     </div>
                     <div className=" col-12 col-sm-6 col-md-4 offset-1">
                         <img className="img-fluid" src={baseUrl + ("assets/logos/devLogo.png")} alt="Developer" />
                     </div>
                 </div>
-            </div>
+            </Jumbotron>
             <div className="row">
                 <div className="col-12 col-sm-12 col-md-12 col-lg-12">
                     <h2 className="text-center text-color">My Skills</h2>
                 </div>
                 <div className="row-content">
                     <div className="row">
-                        <div className=" col-12 col-sm-4 col-md-4">
-                            <h5 className="text-center text-color"> FullStack Web Development</h5>
+                        <div className=" col-12 col-md-4">
+                            <h5 className="text-center hcolor text-nowrap"> FullStack Web Development</h5>
                             <Fade in>
                                 <ul className="no-bullets text-color">
                                     <li>
@@ -107,7 +115,7 @@ function Home(props) {
                             </Fade>
                         </div>
                         <div className="col-12 col-md-4">
-                            <h5 className="text-center text-color"> Database Administration </h5>
+                            <h5 className="text-center hcolor text-color"> Database Administration </h5>
                             <Fade in>
                                 <ul className="no-bullets text-color">
                                     <li>
@@ -138,8 +146,8 @@ function Home(props) {
                             </Fade>
                         </div>
                         <div className="col-12 col-md-4 col-lg-4">
-                            <h5 className="text-center text-color"> Application Development </h5>
-                            <Fade in enterOpacity={0.95}>
+                            <h5 className="text-center hcolor text-color"> Application Development </h5>
+                            <Fade in>
                                 <ul className="no-bullets text-color">
                                     <li>
                                         <img src={baseUrl + ("./assets/logos/reactLogo.png")} alt="React Logo" />

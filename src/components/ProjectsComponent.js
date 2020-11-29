@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import { Card, CardImg, CardText, CardBody, CardTitle, Breadcrumb, Jumbotron, BreadcrumbItem, CardDeck } from 'reactstrap';
+import { Card, CardImg, CardText, CardBody, CardTitle, CardImgOverlay, Button, Breadcrumb, Jumbotron, BreadcrumbItem, CardDeck } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { Loading } from './LoadingComponent';
 
@@ -34,6 +34,7 @@ class ProjectsMenu extends Component {
                     <div className="text-center">
 
                         <Card>
+
                             <CardBody >
                                 <img src={baseUrl + project.image2} alt="" />
                                 <img src={baseUrl + project.image3} alt="" />
@@ -65,14 +66,19 @@ class ProjectsMenu extends Component {
                     <div className="zoom">
                         <summary>
                             <CardDeck>
-                                <Card className="text-center " onClick={() => this.onProjectSelect(project)}>
+                                <Card onClick={() => this.onProjectSelect(project)}>
+                                    <div>
+                                        <Button outline color="primary" className="float-right">
+                                            <span className="fa fa-heart"></span>
+                                        </Button>
+                                    </div>
                                     <FadeTransform in
                                         transformProps={{
                                             exitTransform: 'scale(0.5) translateY(-50%)'
                                         }}>
                                         <CardImg width='100%' src={baseUrl + project.image} alt={project.name} />
-                                        <CardTitle className="bg-primary text-white">{project.name}</CardTitle>
-                                        <CardText>{project.category}</CardText>
+                                        <CardTitle className="text-center bg-primary text-white">{project.name}</CardTitle>
+                                        <CardText className="text-center">{project.category}</CardText>
                                         <a href={project.link}>{project.word}</a>
                                     </FadeTransform>
                                 </Card>
@@ -114,7 +120,7 @@ class ProjectsMenu extends Component {
                         </div>
                         <div className="row">
                             <div className="col-12 col-sm col-md  ">
-                                <img className="center-block img-fluid" src={baseUrl + ("assets/logos/projects.png")}   alt="Developer" />
+                                <img className="center-block img-fluid" src={baseUrl + ("assets/logos/projects.png")} alt="Developer" />
                             </div>
                         </div>
                     </Jumbotron>Projects
