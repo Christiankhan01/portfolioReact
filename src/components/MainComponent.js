@@ -5,9 +5,10 @@ import About from './AboutComponent';
 import Header from './HeaderComponent';
 import Footer from './FooterComponent';
 import Contact from './ContactComponent';
+import Favorites from './FavoritesComponent';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { fetchProjects } from '../redux/ActionCreators';
+import { fetchProjects, fetchFavorites, postFeedback, postFavorite, deleteFavorite, loginUser, logoutUser, googleLogin } from '../redux/ActionCreators';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { actions } from 'react-redux-form';
 
@@ -16,13 +17,25 @@ import { actions } from 'react-redux-form';
 
 const mapStateToProps = state => {
   return {
-    projects: state.projects
+    projects: state.projects, 
+    favorites: state.favorites, 
+    auth: state.auth
   }
 }
 
 const mapDispatchToProps = (dispatch) => ({
   fetchProjects: () => { dispatch(fetchProjects()) },
-  resetFeedbackForm: () => { dispatch(actions.reset('feedback')) }
+  resetForm: () => { dispatch(actions.reset('feedback')) },
+  postFeedback: (feedback) => dispatch(postFeedback(feedback)),
+  fetchFavorites: () => dispatch(fetchFavorites()), 
+  postFavorite: (projectId) => dispatch(postFavorite(projectId)),
+  deleteFavorite: (projectId) => dispatch(deleteFavorite(projectId)),
+  loginUser: (creds) => dispatch(loginUser(creds)),
+  logoutUser: () => dispatch(logoutUser()),
+  googleLogin: () => dispatch(googleLogin()),
+  
+  
+  
 });
 
 class Main extends Component {
@@ -30,6 +43,11 @@ class Main extends Component {
 
   componentDidMount() {
     this.props.fetchProjects();
+    this.props.fetchFavorites(); 
+  }
+  
+  componentWillUnmount() {
+    this.props.logoutUser(); 
   }
 
   render() {
@@ -40,12 +58,17 @@ class Main extends Component {
           projectsLoading={this.props.projects.isLoading}
           projectsErrMess={this.props.projects.errMess}
         />
+
+
       );
     }
     return (
       <div className="body-color">
         <div>
-          <Header />
+          <Header auth={this.props.auth}
+          loginUser={this.props.loginUser}
+          logoutUser={this.props.logoutUser}
+          googleLogin={this.props.googleLogin} />
           <TransitionGroup>
             <CSSTransition key={this.props.location.key} classNames="page" timeout={300}>
               <Switch>

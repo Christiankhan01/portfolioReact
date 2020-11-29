@@ -28,10 +28,13 @@
     font-family: Consolas;
 }
 
+<<<<<<< HEAD
 .alcenter {
     margin: auto;
 }
 
+=======
+>>>>>>> 01d56c581dbdc40b3cfc78e09483f68fd497ee79
 .zoom {
     /* Animation */
     width: 200px;
@@ -40,6 +43,15 @@
 .zoom:hover {
     transform: scale(1.2);
     /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.modal-header {
+    background-color: #007bff;
+    color: white;
+}
+
+.hcolor {
+    color: #007bff
 }
 
 .cardStyle {
@@ -85,6 +97,13 @@ ul.no-bullets {
     padding: 0;
     display: table;
     margin: 0 auto;
+<<<<<<< HEAD
+=======
+}
+
+.alcenter {
+    margin: auto;
+>>>>>>> 01d56c581dbdc40b3cfc78e09483f68fd497ee79
 }
 
 .text-color {

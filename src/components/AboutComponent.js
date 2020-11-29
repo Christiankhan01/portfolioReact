@@ -10,6 +10,7 @@ import { FaUserGraduate, FaMedal, FaHistory, FaCheckSquare } from 'react-icons/f
 
 
 
+
 function About() {
     return (
         <div className="container-fluid">
@@ -17,16 +18,16 @@ function About() {
                 <div className="row">
                     <div className="col-12 col-sm-12 col-md-8 offset-md-2 ">
                         <h1 className="text-center">About me</h1>
-                        <p className="font-custom">Hi, my name is Christian Khan. I am a Computer Programmer and fullstack web developer in Toronto, who can build web applications from scratch. I enjoy creating functional applications for the web, desktop or mobile. Working with ReactJS
+                        <p className="font-s">Hi, my name is Christian Khan. I am a Computer Programmer and fullstack web developer in Toronto, who can build web applications from scratch. I enjoy creating functional applications for the web, desktop or mobile. Working with ReactJS
                         within the MERN framework has become one of my hobbies as i explore the <i>"code once deploy
                             everywhere"</i> approach to web development.
                         </p>
                     </div>
                 </div>
 
-                <div className="row offset-4 offset-md-2">
+                <div className="row offset-5 offset-sm-1 offset-md-2">
 
-                        <div className="col-sm-4  col-md-3">
+                        <div className="col-sm-3  col-md-3">
                             <img src={baseUrl + ("assets/logos/MongoLogo.png")} alt="NoSql MongoDB Logo" />
                             <p>MongoDB</p>
                         </div>
