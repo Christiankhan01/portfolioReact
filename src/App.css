@@ -23,6 +23,11 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.font-s {
+    font-size: 20px;
+    font-family: Consolas;
+}
+
 .zoom {
     /* Animation */
     width: 200px;
@@ -31,6 +36,15 @@
 .zoom:hover {
     transform: scale(1.2);
     /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.modal-header {
+    background-color: #007bff;
+    color: white;
+}
+
+.hcolor {
+    color: #007bff
 }
 
 .cardStyle {
@@ -74,8 +88,12 @@
 ul.no-bullets {
     list-style-type: none;
     padding: 0;
-    margin: 0;
-    text-align: center;
+    display: table;
+    margin: 0 auto;
+}
+
+.alcenter {
+    margin: auto;
 }
 
 .text-color {
