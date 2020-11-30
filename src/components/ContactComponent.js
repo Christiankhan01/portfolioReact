@@ -27,7 +27,7 @@ class Contact extends Component {
 
     handleSubmit(values) {
         console.log("Current state is: " + JSON.stringify(values));
-        alert("Current state is: " + JSON.stringify(values));
+        this.props.postFeedback(values);
         this.props.resetFeedbackForm();
 
     }
@@ -42,13 +42,13 @@ class Contact extends Component {
                         <div className="row row-header">
                             <div className="text-center col-12 col-sm-12 col-md-12">
                                 <h1 className="text-center">Contact Me</h1>
-                                <p className="font-custom">Have great idea for an app or website? Let's put some code to it and make it a reality!</p>
+                                <p className="font-s">Have great idea for an app or website? Let's put some code to it and make it a reality!</p>
                                 <div className="row">
                                     <div className=" col-12 col-sm-6 col-md-6">
-                                        <img src={baseUrl + ("assets/logos/idea.png")} alt="" />
+                                        <img className="img-fluid" src="https://firebasestorage.googleapis.com/v0/b/portfolioserver-93c29.appspot.com/o/logos%2Fidea.png?alt=media&token=3ab757dc-09cd-4d1f-95a5-bd015747f22e" alt="" />
                                     </div>
                                     <div className="col-12 col-sm-6 col-md-6">
-                                        <img src={baseUrl + ("assets/logos/Responsive.png")} alt="" />
+                                        <img className="img-fluid" src="https://firebasestorage.googleapis.com/v0/b/portfolioserver-93c29.appspot.com/o/logos%2FResponsive.png?alt=media&token=3199ea94-9895-49f7-a200-148f4559d48c" alt="" />
                                     </div>
                                 </div>
                             </div>
@@ -77,7 +77,7 @@ class Contact extends Component {
                         </div>
                         <div className="col-12 col-sm-12 col-md-2 offset-2 ">
                             <div className="text-color text-center">
-                                <h5>Map of our Location</h5>
+                                <h5>Map of my Location</h5>
                             </div>
                         </div>
 

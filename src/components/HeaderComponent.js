@@ -22,6 +22,7 @@ class Header extends Component {
         this.toggleNav = this.toggleNav.bind(this);
         this.toggleModal = this.toggleModal.bind(this);
         this.handleLogin = this.handleLogin.bind(this);
+        this.handleGoogleLogin = this.handleGoogleLogin.bind(this);
         this.handleLogout = this.handleLogout.bind(this);
     }
 
@@ -43,6 +44,11 @@ class Header extends Component {
         event.preventDefault();
 
     }
+    handleGoogleLogin(event) {
+        this.toggleModal();
+        this.props.googleLogin();
+        event.preventDefault();
+    }
 
     handleLogout() {
         this.props.logoutUser();
@@ -55,7 +61,7 @@ class Header extends Component {
                     <div className="container">
                         <NavbarToggler onClick={this.toggleNav} />
                         <NavbarBrand className="ml-auto" href="/">
-                            <img src={baseUrl + ("assets/logos/computeringLogo.png")} alt="Christian Khan" />
+                            <img src="https://firebasestorage.googleapis.com/v0/b/portfolioserver-93c29.appspot.com/o/logos%2FcomputeringLogo.png?alt=media&token=33864c98-92c6-460b-aa7d-8e7c7db3a6f3" alt="Christian Khan" />
                         </NavbarBrand>
                         <Collapse isOpen={this.state.isNavOpen} navbar>
                             <Nav navbar>
@@ -85,11 +91,29 @@ class Header extends Component {
                                 </NavLink>
                                 </NavItem>
                             </Nav>
-                            <Nav navbar className="ml-auto">
+                            <Nav className="ml-auto" navbar>
                                 <NavItem>
-                                    <Button color="primary" onClick={this.toggleModal} >
-                                        <span className="fa fa-sign-in text-color"></span> Login
-                                    </Button>
+                                    { !this.props.auth.isAuthenticated ?
+                                        <Button color="primary" onClick={this.toggleModal}>
+                                            <span className="fa fa-sign-in fa-lg"></span> Login
+                                            {this.props.auth.isFetching ?
+                                                <span className="fa fa-spinner fa-pulse fa-fw"></span>
+                                                : null
+                                            }
+                                        </Button>
+                                        :
+                                        <div>
+                                        <div className="navbar-text mr-3">{this.props.auth.user.displayName}</div>
+                                        <Button outline onClick={this.handleLogout}>
+                                            <span className="fa fa-sign-out fa-lg"></span> Logout
+                                            {this.props.auth.isFetching ?
+                                                <span className="fa fa-spinner fa-pulse fa-fw"></span>
+                                                : null
+                                            }
+                                        </Button>
+                                        </div>
+                                    }
+
                                 </NavItem>
                             </Nav>
                         </Collapse>
@@ -114,6 +138,8 @@ class Header extends Component {
                             </FormGroup>
                                 <Button className="float-right" type="submit" value="submit" color="primary">Login</Button>
                         </Form>
+                        <p></p>
+                        <Button color="danger" onClick={this.handleGoogleLogin}><span className="fa fa-google fa-lg"></span> Login with Google</Button>
                     </ModalBody>
                 </Modal>
             </div >

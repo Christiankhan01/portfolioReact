@@ -115,7 +115,7 @@ class ProjectsMenu extends Component {
                         <div className="row row-header">
                             <div className="text-center col-md-8 offset-2">
                                 <h1>Projects</h1>
-                                <p className="font-custom">Welcome to the projects sections of my portfolio. Weather small widgets with less than 100 lines of code, here you will find a variety of applications.  </p>
+                                <p className="font-s">Welcome to the projects sections of my portfolio. Weather small widgets with less than 100 lines of code, here you will find a variety of applications.  </p>
                             </div>
                         </div>
                         <div className="row">
