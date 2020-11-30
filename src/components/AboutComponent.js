@@ -1,9 +1,7 @@
 import React from 'react';
 import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardDeck, CardHeader, ListGroup, ListGroupItem } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import { baseUrl } from '../shared/baseUrl';
 import { FaUserGraduate, FaMedal, FaHistory, FaCheckSquare } from 'react-icons/fa';
-
 
 
 
@@ -25,22 +23,22 @@ function About() {
                     </div>
                 </div>
 
-                <div className="row offset-5 offset-sm-1 offset-md-2">
+                <div className="row offset-4 offset-md-2">
 
-                        <div className="col-sm-3  col-md-3">
-                            <img src={baseUrl + ("assets/logos/MongoLogo.png")} alt="NoSql MongoDB Logo" />
+                        <div className="col-sm-4  col-md-3">
+                            <img src="https://firebasestorage.googleapis.com/v0/b/portfolioserver-93c29.appspot.com/o/logos%2FMongoLogo.png?alt=media&token=0f151ac3-0504-47c9-9432-2e7291341e6c" alt="NoSql MongoDB Logo" />
                             <p>MongoDB</p>
                         </div>
                         <div className="col-sm-3 col-md-3">
-                            <img src={baseUrl + ("assets/logos/expressLogo.png ")} alt="expressLogo" />
+                            <img src="https://firebasestorage.googleapis.com/v0/b/portfolioserver-93c29.appspot.com/o/logos%2FexpressLogo.png?alt=media&token=5edd80b5-337a-4b19-a0a7-eabb3d2a382a" alt="expressLogo" />
                             <p>Express</p>
                         </div>
                         <div className="col-sm-3 col-md-3">
-                            <img src={baseUrl + ("assets/logos/reactLogo.png")} alt="React " />
+                            <img src="https://firebasestorage.googleapis.com/v0/b/portfolioserver-93c29.appspot.com/o/logos%2FreactLogo.png?alt=media&token=3208ded9-304e-45f9-b0db-46b78e57a6ae" alt="React " />
                             <p> React</p>
                         </div>
                         <div className="col-sm-3 col-md-3">
-                            <img src={baseUrl + ("assets/logos/nodeLogo.png")} alt="NoSql MongoDB Logo" />
+                            <img src="https://firebasestorage.googleapis.com/v0/b/portfolioserver-93c29.appspot.com/o/logos%2FnodeLogo.png?alt=media&token=4d2bad1b-9d3b-4b56-86b5-f0f9fcddae95" alt="NoSql MongoDB Logo" />
                             <p>NodeJS</p>
                         </div>
 

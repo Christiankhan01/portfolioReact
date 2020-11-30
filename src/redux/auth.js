@@ -41,4 +41,3 @@ export const Auth = (state = {
             return state
     }
 }
-
