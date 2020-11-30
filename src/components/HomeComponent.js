@@ -1,7 +1,6 @@
 import React from 'react';
 import { Card, CardImg, CardText, CardBody, CardTitle, Jumbotron } from 'reactstrap';
 import { Loading } from './LoadingComponent';
-import { baseUrl } from '../shared/baseUrl';
 import { FadeTransform, Fade } from 'react-animation-components';
 import Typing from 'react-typing-animation';
 
@@ -10,9 +9,7 @@ import Typing from 'react-typing-animation';
 function RenderCard({ item, isLoading, errMess }) {
     if (isLoading) {
         return (
-
             <Loading />
-
         );
     }
     else if (errMess) {
@@ -26,14 +23,14 @@ function RenderCard({ item, isLoading, errMess }) {
                 transformProps={{ exitTransform: 'scale(0.5) translateY(-50%)' }}>
                 <div className="container-fluid">
                     <div className="row justify-content-center">
-                        <div className="col-12 col-md-5    ">
+                        <div className="col-12 col-md-5">
                             <Card>
                                 <CardBody >
                                     <div className="text-center" >
-                                        <CardImg className="img-fluid" src={baseUrl + item.image} alt="" />
+                                        <CardImg className="img-fluid" src={item.image} alt="" />
                                         <CardTitle className="bg-primary text-white">{item.name}</CardTitle>
-                                        <img src={baseUrl + item.image2} alt="" />
-                                        <img src={baseUrl + item.image3} alt="" />
+                                        <img src={item.image2} alt="" />
+                                        <img src={item.image3} alt="" />
                                         <CardText>{item.shortDescription}</CardText>
                                         <CardText>{item.label}</CardText>
                                         <a href={item.link}>{item.word}</a>
@@ -49,6 +46,7 @@ function RenderCard({ item, isLoading, errMess }) {
 }
 
 function Home(props) {
+    
     return (
         <div className="container-fluid">
             <Jumbotron>
@@ -167,7 +165,6 @@ function Home(props) {
                     </div>
                 </div>
             </div>
-
             <h2 className="text-center text-color">Some Featured Works</h2>
             <div className="row">
                 <div className="col-12 col-sm col-md-6">
@@ -181,7 +178,6 @@ function Home(props) {
                         errMess={props.projectsErrMess} />
                 </div>
             </div>
-
         </div>
     );
 }

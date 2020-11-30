@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Breadcrumb, BreadcrumbItem, Button, Label, Col, Row } from 'reactstrap';
 import { Control, Form, Errors } from 'react-redux-form';
-import { baseUrl } from '../shared/baseUrl';
 import { Link } from 'react-router-dom';
 import Map from './MapComponent';
 import { withGoogleMap, withScriptjs } from 'react-google-maps';

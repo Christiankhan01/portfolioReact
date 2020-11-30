@@ -1,10 +1,8 @@
 
 import React, { Component } from 'react';
-import { Card, CardImg, CardText, CardBody, CardTitle, CardImgOverlay, Button, Breadcrumb, Jumbotron, BreadcrumbItem, CardDeck } from 'reactstrap';
+import { Card, CardImg, CardText, CardBody, CardTitle, Button,  Breadcrumb, Jumbotron, BreadcrumbItem, CardDeck } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { Loading } from './LoadingComponent';
-
-import { baseUrl } from '../shared/baseUrl';
 import { FadeTransform } from 'react-animation-components';
 
 
@@ -28,19 +26,15 @@ class ProjectsMenu extends Component {
     renderProject(project) {
         if (project != null) {
             return (
-
                 <div className=" row-content col-md-4">
-
                     <div className="text-center">
-
                         <Card>
-
                             <CardBody >
-                                <img src={baseUrl + project.image2} alt="" />
-                                <img src={baseUrl + project.image3} alt="" />
-                                <img src={baseUrl + project.image4} alt="" />
-                                <img src={baseUrl + project.image5} alt="" />
-                                <img src={baseUrl + project.image6} alt="" />
+                                <img src={project.image2} alt="" />
+                                <img src={project.image3} alt="" />
+                                <img src={project.image4} alt="" />
+                                <img src={project.image5} alt="" />
+                                <img src={project.image6} alt="" />
                                 <CardTitle>{project.name}</CardTitle>
                                 <CardText>{project.language}</CardText>
                                 <CardText>{project.description}</CardText>
@@ -60,7 +54,7 @@ class ProjectsMenu extends Component {
         }
     }
     render() {
-        const projectsMenu = this.props.projects.projects.map((project) => {
+       const projectsMenu = this.props.projects.projects.map((project) => {
             return (
                 <div key={project.id} className="justify-content-center col-12 col-sm-12 col-md-3 d-flex  ">
                     <div className="zoom">
@@ -76,7 +70,7 @@ class ProjectsMenu extends Component {
                                         transformProps={{
                                             exitTransform: 'scale(0.5) translateY(-50%)'
                                         }}>
-                                        <CardImg width='100%' src={baseUrl + project.image} alt={project.name} />
+                                        <CardImg width='100%' src={project.image} alt={project.name} />
                                         <CardTitle className="text-center bg-primary text-white">{project.name}</CardTitle>
                                         <CardText className="text-center">{project.category}</CardText>
                                         <a href={project.link}>{project.word}</a>
@@ -120,7 +114,7 @@ class ProjectsMenu extends Component {
                         </div>
                         <div className="row">
                             <div className="col-12 col-sm col-md  ">
-                                <img className="center-block img-fluid" src={baseUrl + ("assets/logos/projects.png")} alt="Developer" />
+                                <img className="center-block img-fluid" src="https://firebasestorage.googleapis.com/v0/b/portfolioserver-93c29.appspot.com/o/logos%2Fprojects.png?alt=media&token=15038e50-8718-49fa-ae5a-2f7c96c8f802" alt="Developer" />
                             </div>
                         </div>
                     </Jumbotron>Projects

@@ -1,5 +1,4 @@
 import * as ActionTypes from './ActionTypes';
-import { baseUrl } from '../shared/baseUrl';
 import { auth, firestore, fireauth } from '../firebase/fireabse';
 
 export const fetchProjects = () => (dispatch) => {

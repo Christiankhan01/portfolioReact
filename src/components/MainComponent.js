@@ -57,6 +57,7 @@ class Main extends Component {
           project1={this.props.projects.projects.filter((project1) => project1.featured)[1]}
           projectsLoading={this.props.projects.isLoading}
           projectsErrMess={this.props.projects.errMess}
+          
         />
       );
     }
