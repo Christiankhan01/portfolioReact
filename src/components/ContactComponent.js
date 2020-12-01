@@ -98,6 +98,7 @@ class Contact extends Component {
                     <div className="row row-content">
                         <div className="col-md-6 offset-3">
                             <h3 className="text-center text-color">Send Your Feedback</h3>
+                            <hr/>
                             <Form model="feedback" onSubmit={(values) => this.handleSubmit(values)}>
                                 <Row className="form-group">
                                     <Label htmlFor="firstName" md={2} className="text-color">First Name</Label>
